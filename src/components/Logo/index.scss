@@ -1,9 +1,14 @@
 @import './../../styles/base/vars';
+@import './../../styles/utils/animations';
 
 .logoWrap {
   width: 100%;
   text-align: center;
-  position: relative;
+  position: absolute;
+  opacity: 0;
+  animation: slideDownToMiddle 1s, fadeIn 0.6s;
+  animation-speed: $animationBezier-easeOut-extreme;
+  animation-fill-mode: forwards;
 
   & span {
     display: inline-block;
@@ -11,6 +16,8 @@
     font-size: $fontSize-xxxlarge;
     letter-spacing: 2px;
     color: $color-brandDark;
+    position: relative;
+    top: 0;
   }
 
 }

@@ -1,0 +1,52 @@
+@import './../../styles/base/vars';
+@import './../../styles/utils/mixins';
+
+.menu {
+
+  position: fixed;
+  overflow-y: scroll;
+  z-index: 9999;
+  width: calc( 100% - #{$scale-2-1} );
+  height: 200px;
+  left: $scale;
+  top: 0;
+  background: rgba(white, 0.97);
+  overflow: hidden;
+  padding: $scale;
+
+  &_list {
+
+    &_element {
+
+      &_link {
+
+
+
+      }
+
+    }
+
+  }
+
+}
+
+// Animation
+$menuAnimation: transform 500ms $animationBezier;
+
+.menuAnimation-enter { transform: translateY(-100vw); }
+
+.menuAnimation-enter.menuAnimation-enter-active {
+
+  transform: translateX(0);
+  transition: $menuAnimation;
+
+}
+
+.menuAnimation-leave { transform: translateX(0); }
+
+.menuAnimation-leave.menuAnimation-leave-active {
+
+  transform: translateY(-100vw);
+  transition: $menuAnimation;
+
+}

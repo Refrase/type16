@@ -1,0 +1,10 @@
+@import './../../styles/base/vars';
+@import './../../styles/utils/mixins';
+
+.header {
+
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+
+}
