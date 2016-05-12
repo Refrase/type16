@@ -35,14 +35,34 @@ $iconWidth: 24px;
 
     &_bar {
       position: absolute;
-      height: 20%;
-      top: $iconWidth / 2;
+      height: 2px;
 
       &:first-child {
         transform: rotate( 45deg );
       }
 
       &:last-child {
+        transform: rotate( -45deg );
+      }
+
+    }
+
+  }
+
+  &-chevron {
+
+    &_bar {
+      position: absolute;
+      height: 2px;
+      top: $iconWidth / 2;
+
+      &:first-child {
+        left: $iconWidth / 3;
+        transform: rotate( 45deg );
+      }
+
+      &:last-child {
+        right: $iconWidth / 3;
         transform: rotate( -45deg );
       }
 

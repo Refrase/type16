@@ -1,6 +1,28 @@
 @import './../base/vars';
 
 @keyframes fadeIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
+	0% 		{ opacity: 0; }
+	100% 	{ opacity: 1; }
+}
+
+@keyframes scaleUp {
+	0% 		{ transform: scale(0); }
+	100% 	{ transform: scale(1); }
+}
+
+@keyframes popUp {
+	0% 		{ transform: scale(0); }
+	80% 	{ transform: scale(1.2); }
+	100% 	{ transform: scale(1); }
+}
+
+@keyframes slideUpToMiddle {
+	0%   	{ transform: translate3d(0, 100%, 0); }
+	100% 	{ transform: translate3d(0, 0%, 0); }
+}
+
+@keyframes subtleAlive {
+	0% 		{ transform: translate3d(0, 0, 0); }
+	30% 	{ transform: translate3d(0, -16px, 0); }
+	100% 	{ transform: translate3d(0, 0, 0); }
 }

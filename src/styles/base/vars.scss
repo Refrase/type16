@@ -98,4 +98,5 @@ $contentWidth-extraWidescreen: 1000px;
 /* ----- Animation ----- */
 
 $animationBezier: cubic-bezier(0.1, 0.95, 0.65, 1);
+$animationBezier-easeOut-extreme: cubic-bezier(0, 0.8, 0.05, 0.95);
 $animationSpeed: 250ms;

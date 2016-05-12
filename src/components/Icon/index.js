@@ -5,6 +5,7 @@ import './index.scss';
 // Libraries
 
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 // Components
 
@@ -47,6 +48,15 @@ class Icon extends Component {
           </div>
         );
 
+      case 'chevron' :
+
+        return (
+          <div className="icon_inner icon-chevron">
+            <span className="icon_bar icon-chevron_bar"></span>
+            <span className="icon_bar icon-chevron_bar"></span>
+          </div>
+        );
+
       default : return ( null );
 
     }
@@ -56,13 +66,18 @@ class Icon extends Component {
   render() {
 
     const {
+      className,
       which,
       onClick,
     } = this.props;
 
+    const classes = classNames( 'icon', {
+      [className]: className ? true : null,
+    });
+
     return (
 
-      <a className="icon" href="#" onClick={ onClick }>
+      <a className={ classes } href="#" onClick={ onClick }>
         { this.renderIcon( which ) }
       </a>
 
@@ -75,6 +90,7 @@ class Icon extends Component {
 // PropTypes
 
 Icon.propTypes = {
+  className: PropTypes.string,
   which: PropTypes.string,
   onClick: PropTypes.func,
 };

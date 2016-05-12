@@ -1,0 +1,12 @@
+@import './../../../../styles/base/vars';
+
+.iconHero {
+  position: absolute;
+  bottom: 50px;
+  left: calc( 50% - 12px );
+  transform: rotate( 180deg );
+
+  & span {
+    background: $color-brandDark;
+  }
+}

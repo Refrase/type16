@@ -59,8 +59,9 @@ class Logo extends Component {
     });
 
     for ( let i = 0; i < this.logoLetters.length; i++ ) {
+      const translateAmount = this.state.windowScrollTop * this.randomNumbers[i];
       $( this.logoLetters[i] ).css({
-        transform: `translate3d(0px, -${this.state.windowScrollTop * this.randomNumbers[i]}px, 0px)`, // 'translate3d' force GPU
+        transform: `translate3d(0px, -${translateAmount}px, 0px)`, // 'translate3d' force GPU
       });
     }
 
