@@ -1,0 +1,11 @@
+{
+  "name": "frontend",
+  "scripts": {},
+  "env": {
+    "NODE_ENV": {
+      "required": true
+    }
+  },
+  "addons": [
+  ]
+}

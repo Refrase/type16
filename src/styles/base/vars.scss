@@ -1,0 +1,101 @@
+/* ----- Scale ----- */
+
+$scale: 16px;
+
+$scale-5-1: $scale * 5;
+$scale-4-1: $scale * 4;
+$scale-3-1: $scale * 3;
+$scale-2-1: $scale * 2;
+
+$scale-1-2: $scale / 2;
+$scale-1-4: $scale / 4;
+$scale-1-8: $scale / 8;
+
+/* ----- Colors ----- */
+
+// ----- Main
+$color-brandDark: #2e3192;
+
+// Main darker
+$color-brandDark-darker-3: darken( $color-brandDark, 30% );
+$color-brandDark-darker-2: darken( $color-brandDark, 20% );
+$color-brandDark-darker-1: darken( $color-brandDark, 10% );
+
+// Main lighter
+$color-brandDark-lighter-1: lighten( $color-brandDark, 10% );
+$color-brandDark-lighter-2: lighten( $color-brandDark, 20% );
+$color-brandDark-lighter-3: lighten( $color-brandDark, 30% );
+
+// ----- Complementary
+$color-brandLight: #c4e6e6;
+
+// Complementary darker
+$color-brandLight-darker-3: darken( $color-brandLight, 30% );
+$color-brandLight-darker-2: darken( $color-brandLight, 20% );
+$color-brandLight-darker-1: darken( $color-brandLight, 10% );
+
+// Complementary lighter
+$color-brandLight-lighter-1: lighten( $color-brandLight, 10% );
+$color-brandLight-lighter-2: lighten( $color-brandLight, 20% );
+$color-brandLight-lighter-3: lighten( $color-brandLight, 30% );
+
+// ----- Shadow
+$color-shadow: #BAB;
+
+// Shadow darker
+$color-shadow-darker-3: darken( $color-shadow, 30% );
+$color-shadow-darker-2: darken( $color-shadow, 20% );
+$color-shadow-darker-1: darken( $color-shadow, 10% );
+
+// Shwadow lighter
+$color-shadow-lighter-1: lighten( $color-shadow, 10% );
+$color-shadow-lighter-2: lighten( $color-shadow, 20% );
+$color-shadow-lighter-3: lighten( $color-shadow, 30% );
+
+/* ----- Font-family ----- */
+
+$fontFamily-headline: 'FatFrank', Helvetica, Arial, Verdana, sans-serif; // 'Acumin' is Typekit served
+$fontFamily-body: Georgia, serif;
+
+/* ----- Font-size ----- */
+
+$fontSize-title: 48px;
+$fontSize-subtitle: 28px;
+$fontSize-body-copy: 18px;
+
+$fontSize-xxxlarge: 60px;
+$fontSize-xxlarge: 32px;
+$fontSize-xlarge: 26px;
+$fontSize-large: 20px;
+$fontSize-base: 16px;
+$fontSize-small: 14px;
+$fontSize-xsmall: 12px;
+$fontSize-xxsmall: 11px;
+
+/* ----- Font-weight ----- */
+
+$fontWeight-bold: 700;
+$fontWeight-normal: 400;
+$fontWeight-thin: 100;
+
+/* ----- Line-height ----- */
+
+$lineHeight: 1.3;
+
+/* ----- Border-radius ----- */
+
+$borderRadius: 2px;
+
+/* ----- Layout ----- */
+
+$sectionPadding-topBottom: $scale;
+
+$contentWidth-tablet: 100%;
+$contentWidth-desktop: 600px;
+$contentWidth-widescreen: 800px;
+$contentWidth-extraWidescreen: 1000px;
+
+/* ----- Animation ----- */
+
+$animationBezier: cubic-bezier(0.1, 0.95, 0.65, 1);
+$animationSpeed: 250ms;

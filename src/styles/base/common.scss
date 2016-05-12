@@ -1,0 +1,43 @@
+@import './vars';
+
+html,
+body {
+
+	width: 100%;
+	min-height: 100%;
+
+}
+
+//	Magic, read why here:
+//	http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+
+html {
+
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+
+}
+
+*,
+*:before,
+*:after {
+
+	box-sizing: inherit;
+
+}
+
+input {
+
+	padding: $scale-1-2 $scale-1-2;
+	border: 1px solid $color-shadow-lighter-2;
+	transition: padding-left $animationSpeed $animationBezier;
+
+}
+
+input:focus,
+input:active {
+
+	outline: none;
+	padding-left: $scale;
+
+}

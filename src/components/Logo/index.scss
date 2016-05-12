@@ -1,0 +1,16 @@
+@import './../../styles/base/vars';
+
+.logoWrap {
+  width: 100%;
+  text-align: center;
+  position: relative;
+
+  & span {
+    display: inline-block;
+    font-family: $fontFamily-headline;
+    font-size: $fontSize-xxxlarge;
+    letter-spacing: 2px;
+    color: $color-brandDark;
+  }
+
+}

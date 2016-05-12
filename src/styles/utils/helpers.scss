@@ -1,0 +1,112 @@
+@import './../base/vars';
+@import './../utils/mixins';
+
+.padding {
+
+	padding: $scale;
+
+	&-none {
+		padding: 0 !important;
+	}
+
+}
+
+.fontSize {
+
+	&-title {
+
+		font-size: $fontSize-title;
+
+	}
+
+	&-xxlarge {
+
+		font-size: $fontSize-xxlarge;
+
+	}
+
+	&-xlarge {
+
+		font-size: $fontSize-xlarge;
+
+	}
+
+	&-large {
+
+		font-size: $fontSize-large;
+
+	}
+
+	&-base {
+
+		font-size: $fontSize-base;
+
+	}
+
+	&-small {
+
+		font-size: $fontSize-small;
+
+	}
+
+}
+
+.backgroundColor {
+
+	&-brandDark {
+
+		background-color: $color-brandDark;
+
+	}
+
+	&-brandLight {
+
+		background-color: $color-brandLight;
+
+	}
+
+	&-shadow {
+
+		background-color: $color-shadow;
+
+		&-lighter {
+
+			&-1 {
+
+				background-color: $color-shadow-lighter-1;
+
+			}
+
+			&-2 {
+
+				background-color: $color-shadow-lighter-2;
+
+			}
+
+			&-3 {
+
+				background-color: $color-shadow-lighter-3;
+
+			}
+
+		}
+
+	}
+
+}
+
+.height {
+
+	&-full {
+		height: 100vh;
+	}
+
+}
+
+.width {
+
+	&-full {
+		width: 100vw !important;
+	}
+
+}

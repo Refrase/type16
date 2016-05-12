@@ -1,0 +1,22 @@
+@import './vars';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-family: $fontFamily-headline; }
+
+h1 { font-size: $fontSize-title; }
+h2 { font-size: $fontSize-xxlarge; }
+h3 { font-size: $fontSize-xlarge; }
+h4 { font-size: $fontSize-large; }
+h5 { font-size: $fontSize-base; }
+h6 { font-size: $fontSize-small; }
+
+p {
+
+  font-family: $fontFamily-body;
+  font-size: $fontSize-small;
+
+}
