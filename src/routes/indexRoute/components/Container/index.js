@@ -8,6 +8,10 @@ import './index.scss';
 
 import React, { Component } from 'react';
 
+// Utils
+
+import { scrollToId } from 'utils/scrollToId';
+
 // Components
 
 import Hero from 'components/Hero';
@@ -25,6 +29,14 @@ class Container extends Component {
 
     super(props);
 
+    this.handleClickHeroIcon = this.handleClickHeroIcon.bind(this);
+
+  }
+
+  handleClickHeroIcon() {
+
+    scrollToId( '.pageSection-1' );
+
   }
 
   render() {
@@ -32,11 +44,10 @@ class Container extends Component {
     return (
       <div>
         <Hero>
-          <Icon which="chevron" className="iconHero" />
           <Logo animateOnScroll />
-
+          <Icon which="chevron" className="iconHero" onClick={ this.handleClickHeroIcon } />
         </Hero>
-        <PageSection columns="4" className="backgroundColor-shadow-lighter-2 width-full height-full padding-none">
+        <PageSection columns="4" className="pageSection-1 backgroundColor-shadow-lighter-2 width-full height-full padding-none">
           <div>salfgæh</div>
           <div>salfgæh</div>
           <div>salfgæh</div>
