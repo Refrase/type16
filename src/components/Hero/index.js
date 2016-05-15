@@ -5,6 +5,7 @@ import './index.scss';
 // Libraries
 
 import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
 // Components
 
@@ -24,11 +25,15 @@ class Hero extends Component {
 
   render() {
 
-    const { children } = this.props;
+    const { children, className } = this.props;
+
+    const classes = classNames( 'hero', {
+      [className]: className ? true : null,
+    });
 
     return (
 
-      <div className="hero">
+      <div className={ classes }>
         { children }
       </div>
 
@@ -42,6 +47,7 @@ class Hero extends Component {
 
 Hero.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 Hero.defaultProps = {

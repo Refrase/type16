@@ -5,7 +5,7 @@ import './index.scss';
 // Libraries
 
 import React, { Component, PropTypes } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 // Components
 
@@ -37,7 +37,7 @@ class PageSection extends Component {
       width,
     } = this.props;
 
-    const classes = classnames( 'pageSection', {
+    const classes = classNames( 'pageSection', {
       'pageSection-columns': columns ? true : null,
       'pageSection-columns-2': columns === '2',
       'pageSection-columns-3': columns === '3',

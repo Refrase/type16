@@ -33,6 +33,8 @@ class Logo extends Component {
 
     this.logoLetters = $( '.logoWrap' ).children();
 
+    this.numbersScrollSpeed = [2.7, 2.4, 2.1, 1.8, 1.5, 1.2];
+
     this.randomNumbers = []; // Array of random numbers generated once (below), used to get different scroll speeds
     for ( let i = 0; i < this.logoLetters.length; i++ ) {
       const randomNumber = (Math.random() + 1) * (Math.random() + 1);
@@ -59,7 +61,7 @@ class Logo extends Component {
     });
 
     for ( let i = 0; i < this.logoLetters.length; i++ ) {
-      const translateAmount = this.state.windowScrollTop * this.randomNumbers[i];
+      const translateAmount = this.state.windowScrollTop * this.randomNumbers[i]; // Can also be this.numbersScrollSpeed created above
       $( this.logoLetters[i] ).css({
         transform: `translate3d(0px, -${translateAmount}px, 0px)`, // 'translate3d' force GPU
       });

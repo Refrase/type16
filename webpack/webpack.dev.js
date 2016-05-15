@@ -4,6 +4,7 @@ import webpack from 'webpack';
 
 // Loaders
 
+import jqueryLoader from './partials/loaders/vendor/jquery';
 import assetsLoader from './partials/loaders/scripts';
 import scriptsLoader from './partials/loaders/scripts';
 import stylesLoader from './partials/loaders/styles';
@@ -37,6 +38,7 @@ const config = {
   resolve,
   module: {
     loaders: [
+      jqueryLoader,
       assetsLoader,
       scriptsLoader,
       stylesLoader,
