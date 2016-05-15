@@ -55,7 +55,7 @@ $iconWidth: 24px;
       position: absolute;
       height: 2px;
       top: $iconWidth / 2;
-      transition: all 0.6s $animationBezier;
+      transition: all 0.3s $animationBezier;
 
       &:first-child {
         left: $iconWidth / 3;
