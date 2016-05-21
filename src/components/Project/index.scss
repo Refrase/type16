@@ -1,0 +1,27 @@
+@import './../../styles/base/vars';
+@import './../../styles/utils/mixins';
+
+.project {
+
+  &_client {
+
+    position: relative;
+    left: -20px;
+    display: inline-block;
+    color: white;
+    padding: $scale-1-4 $scale-1-2;
+    background: $color-redPropertyAdvisers;
+    transform: rotate( -1deg );
+    opacity: 0;
+    transition: opacity 0.3s ease-out, left 1s $animationBezier;
+
+    &-shown {
+
+      opacity: 1;
+      left: 0;
+
+    }
+
+  }
+
+}

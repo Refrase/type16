@@ -24,6 +24,7 @@ class Button extends Component {
       children,
       className,
       inactive,
+      link,
       linkTo,
       onClick,
       style,
@@ -33,9 +34,10 @@ class Button extends Component {
     let html;
 
     const classes = classNames( 'button', {
-      'button-primary': !styling || styling === 'primary',
-      'button-secondary': styling === 'secondary',
-      'button-inactive': inactive ? true : null,
+      'button-primary': !link && !styling || styling === 'primary',
+      'button-secondary': !link && styling === 'secondary',
+      'button-inactive': !link && inactive ? true : null,
+      'button-link': link ? true : null,
       [className]: className ? true : null,
     });
 
@@ -96,6 +98,7 @@ Button.propTypes = {
   ]),
   className: PropTypes.string,
   inactive: PropTypes.bool,
+  link: PropTypes.bool,
   linkTo: PropTypes.string,
   onClick: PropTypes.func,
   style: PropTypes.object,

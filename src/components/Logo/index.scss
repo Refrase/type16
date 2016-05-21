@@ -4,18 +4,16 @@
 .logoWrap {
   width: 100%;
   text-align: center;
-  position: absolute;
-  top: calc( 50% - 30px );
   opacity: 0;
   animation: subtleAlive 3s infinite, fadeIn 1.2s ease-in;
   animation-fill-mode: forwards;
 
   & span {
     display: inline-block;
-    font-family: $fontFamily-headline;
+    font-family: $fontFamily-logo;
     font-size: $fontSize-xxxlarge;
     letter-spacing: 2px;
-    color: $color-brandDark;
+    color: $color-brandWhite-lighter-1;
     position: relative;
     top: 0;
   }

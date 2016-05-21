@@ -14,4 +14,16 @@
 
   &-inactive {}
 
+  &-link {
+    color:  $color-brandDark;
+    font-family: $fontFamily-body;
+    font-size: $fontSize-xlarge;
+    font-weight: $fontWeight-bold;
+    letter-spacing: 1px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
 }

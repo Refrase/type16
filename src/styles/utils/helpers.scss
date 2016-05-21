@@ -1,112 +1,95 @@
 @import './../base/vars';
 @import './../utils/mixins';
 
-.padding {
-
-	padding: $scale;
-
-	&-none {
-		padding: 0 !important;
-	}
-
+.padding 		{ padding: $scale;
+	&-none 		{ padding: 0 !important; }
 }
 
-.fontSize {
-
-	&-title {
-
-		font-size: $fontSize-title;
-
+.margin 		{ margin: 				$scale;
+	&-none 		{ margin: 				0 !important; }
+	&-bottom 	{ margin-bottom: 	$scale;
+		&-1-2 	{ margin-bottom: 	$scale-1-2; }
+		&-1-4 	{ margin-bottom: 	$scale-1-4; }
+		&-2-1 	{ margin-bottom: 	$scale-2-1; }
 	}
-
-	&-xxlarge {
-
-		font-size: $fontSize-xxlarge;
-
-	}
-
-	&-xlarge {
-
-		font-size: $fontSize-xlarge;
-
-	}
-
-	&-large {
-
-		font-size: $fontSize-large;
-
-	}
-
-	&-base {
-
-		font-size: $fontSize-base;
-
-	}
-
-	&-small {
-
-		font-size: $fontSize-small;
-
-	}
-
 }
 
-.backgroundColor {
-
-	&-brandDark {
-
-		background-color: $color-brandDark;
-
-	}
-
-	&-brandLight {
-
-		background-color: $color-brandLight;
-
-	}
-
-	&-shadow {
-
-		background-color: $color-shadow;
-
-		&-lighter {
-
-			&-1 {
-
-				background-color: $color-shadow-lighter-1;
-
-			}
-
-			&-2 {
-
-				background-color: $color-shadow-lighter-2;
-
-			}
-
-			&-3 {
-
-				background-color: $color-shadow-lighter-3;
-
-			}
-
+.fontSize 	{
+	&-display { font-size: $fontSize-display;
+		@include breakpoint( 'tablet' ) {
+			font-size: $fontSize-title;
 		}
-
+		@include breakpoint( 'mobileMedium' ) {
+			font-size: $fontSize-xxlarge;
+		}
 	}
-
+	&-title 	{ font-size: $fontSize-title;
+		@include breakpoint( 'mobileMedium' ) {
+			font-size: $fontSize-xxlarge;
+		}
+	}
+	&-xxlarge { font-size: $fontSize-xxlarge; }
+	&-xlarge 	{ font-size: $fontSize-xlarge; }
+	&-large 	{ font-size: $fontSize-large; }
+	&-base 		{ font-size: $fontSize-base; }
+	&-small 	{ font-size: $fontSize-small; }
 }
 
-.height {
-
-	&-full {
-		height: 100vh;
-	}
-
+.fontFamily {
+	&-logo 		{ font-family: $fontFamily-logo !important; }
+	&-headline{ font-family: $fontFamily-headline !important; }
+	&-body 		{ font-family: $fontFamily-body !important; }
+	&-system 	{ font-family: $fontFamily-system !important; }
 }
 
-.width {
-
-	&-full {
-		width: 100vw !important;
+.text {
+	&-transform {
+		&-uppercase { text-transform: uppercase; }
 	}
-
 }
+
+.color 					{
+	&-brandDark 	{ color: $color-brandDark; }
+	&-brandLight  { color: $color-brandLight; }
+	&-brandBlack 	{ color: $color-brandBlack; }
+	&-brandWhite  { color: $color-brandWhite; }
+	&-shadow 				{ color: $color-shadow;
+		&-lighter 		{
+			&-1 				{ color: $color-shadow-lighter-1; }
+			&-2 				{ color: $color-shadow-lighter-2; }
+			&-3 				{ color: $color-shadow-lighter-3; }
+		}
+	}
+	&-redPropertyAdvisers  { color: $color-redPropertyAdvisers; }
+}
+
+.backgroundColor 	{
+	&-brandDark 		{	background-color: $color-brandDark; }
+	&-brandLight 		{ background-color: $color-brandLight; }
+	&-shadow 				{ background-color: $color-shadow;
+		&-lighter 		{
+			&-1 				{ background-color: $color-shadow-lighter-1; }
+			&-2 				{ background-color: $color-shadow-lighter-2; }
+			&-3 				{ background-color: $color-shadow-lighter-3; }
+		}
+	}
+}
+
+.height 	{
+	&-full 	{ height: 100vh; }
+}
+
+.minHeight {
+	&-full 	{ min-height: 100vh; }
+}
+
+.width 		{
+	&-full 	{ width: $viewportWidthFix !important; }
+}
+
+.hidden { opacity: 0 !important; }
+.shown { opacity: 1 !important; }
+.hide { display: none !important; }
+.show { display: block !important; }
+
+.rotateUpsideDown { transform: rotate( 360deg ) !important; }

@@ -14,7 +14,7 @@ $scale-1-8: $scale / 8;
 /* ----- Colors ----- */
 
 // ----- Main
-$color-brandDark: #2e3192;
+$color-brandDark: #FF3E2F;
 
 // Main darker
 $color-brandDark-darker-3: darken( $color-brandDark, 30% );
@@ -27,7 +27,7 @@ $color-brandDark-lighter-2: lighten( $color-brandDark, 20% );
 $color-brandDark-lighter-3: lighten( $color-brandDark, 30% );
 
 // ----- Complementary
-$color-brandLight: #c4e6e6;
+$color-brandLight: #FF9E96;
 
 // Complementary darker
 $color-brandLight-darker-3: darken( $color-brandLight, 30% );
@@ -39,8 +39,34 @@ $color-brandLight-lighter-1: lighten( $color-brandLight, 10% );
 $color-brandLight-lighter-2: lighten( $color-brandLight, 20% );
 $color-brandLight-lighter-3: lighten( $color-brandLight, 30% );
 
+// ----- Black
+$color-brandBlack: #111;
+
+// Main darker
+$color-brandBlack-darker-3: darken( $color-brandBlack, 30% );
+$color-brandBlack-darker-2: darken( $color-brandBlack, 20% );
+$color-brandBlack-darker-1: darken( $color-brandBlack, 10% );
+
+// Main lighter
+$color-brandBlack-lighter-1: lighten( $color-brandBlack, 10% );
+$color-brandBlack-lighter-2: lighten( $color-brandBlack, 20% );
+$color-brandBlack-lighter-3: lighten( $color-brandBlack, 30% );
+
+// ----- White
+$color-brandWhite: #ececec;
+
+// Complementary darker
+$color-brandWhite-darker-3: darken( $color-brandWhite, 30% );
+$color-brandWhite-darker-2: darken( $color-brandWhite, 20% );
+$color-brandWhite-darker-1: darken( $color-brandWhite, 10% );
+
+// Complementary lighter
+$color-brandWhite-lighter-1: lighten( $color-brandWhite, 10% );
+$color-brandWhite-lighter-2: lighten( $color-brandWhite, 20% );
+$color-brandWhite-lighter-3: lighten( $color-brandWhite, 30% );
+
 // ----- Shadow
-$color-shadow: #BAB;
+$color-shadow: #B1B1BF;
 
 // Shadow darker
 $color-shadow-darker-3: darken( $color-shadow, 30% );
@@ -52,12 +78,19 @@ $color-shadow-lighter-1: lighten( $color-shadow, 10% );
 $color-shadow-lighter-2: lighten( $color-shadow, 20% );
 $color-shadow-lighter-3: lighten( $color-shadow, 30% );
 
+// ----- Clients
+$color-redPropertyAdvisers: #e20613;
+
 /* ----- Font-family ----- */
 
-$fontFamily-headline: 'FatFrank', Helvetica, Arial, Verdana, sans-serif; // 'Acumin' is Typekit served
-$fontFamily-body: Georgia, serif;
+$fontFamily-logo: 'fatfrank', Helvetica, Arial, Verdana, sans-serif; // First one probably Typekit served
+$fontFamily-headline: 'cubano-sharp', Arial, Verdana, sans-serif; // First one probably Typekit served
+$fontFamily-body: 'ff-meta-serif-web-pro', Georgia, serif; // First one probably Typekit served
+$fontFamily-system: Courier, Helvetica, sans-serif; // First one probably Typekit served
 
 /* ----- Font-size ----- */
+
+$fontSize-display: 64px;
 
 $fontSize-title: 48px;
 $fontSize-subtitle: 28px;
@@ -74,8 +107,14 @@ $fontSize-xxsmall: 11px;
 
 /* ----- Font-weight ----- */
 
+$fontWeight-black: 900;
+$fontWeight-heavy: 800;
 $fontWeight-bold: 700;
+$fontWeight-semibold: 600;
+$fontWeight-medium: 500;
 $fontWeight-normal: 400;
+$fontWeight-book: 300;
+$fontWeight-light: 200;
 $fontWeight-thin: 100;
 
 /* ----- Line-height ----- */
@@ -94,6 +133,8 @@ $contentWidth-tablet: 100%;
 $contentWidth-desktop: 600px;
 $contentWidth-widescreen: 800px;
 $contentWidth-extraWidescreen: 1000px;
+
+$viewportWidthFix: calc( 100vw - 15px ); // 15px = scrollbar
 
 /* ----- Animation ----- */
 

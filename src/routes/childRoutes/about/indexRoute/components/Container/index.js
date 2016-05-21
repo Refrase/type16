@@ -11,6 +11,9 @@ import React, { Component } from 'react';
 // Components
 
 import Button from 'components/Button';
+import Hero from 'components/Hero';
+import Frame from 'components/Frame';
+import PageSection from 'components/PageSection';
 
 // Images
 
@@ -28,8 +31,22 @@ class Container extends Component {
 
     return (
       <div className="pageAbout">
-        <h1>About</h1>
-        <Button linkTo="/">Home</Button>
+
+        <Hero>
+          <h1 className="color-brandWhite fontSize-display fontFamily-logo text-transform-uppercase">Philosophy</h1>
+        </Hero>
+
+        <Frame>
+          <PageSection columns="3">
+            <div>
+              <Button linkTo="/">Projects</Button>
+            </div>
+            <div>
+              <Button linkTo="/" link>Testlink</Button>
+            </div>
+          </PageSection>
+        </Frame>
+
       </div>
     );
 

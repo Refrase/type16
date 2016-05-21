@@ -3,11 +3,18 @@
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 { font-family: $fontFamily-headline; }
+h4 {
+  font-family: $fontFamily-headline;
+}
 
-h1 { font-size: $fontSize-title; }
+h5,
+h6 {
+  font-family: $fontFamily-system;
+  font-weight: $fontWeight-heavy;
+  text-transform: uppercase;
+}
+
+h1 { font-size: $fontSize-title; letter-spacing: 2px; }
 h2 { font-size: $fontSize-xxlarge; }
 h3 { font-size: $fontSize-xlarge; }
 h4 { font-size: $fontSize-large; }
@@ -17,6 +24,8 @@ h6 { font-size: $fontSize-small; }
 p {
 
   font-family: $fontFamily-body;
-  font-size: $fontSize-small;
+  font-size: $fontSize-base;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
 
 }

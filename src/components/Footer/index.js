@@ -8,6 +8,9 @@ import React, { Component } from 'react';
 
 // Components
 
+import Frame from 'components/Frame';
+import PageSection from 'components/PageSection';
+
 // Utilities
 
 // Constants
@@ -26,7 +29,13 @@ class Footer extends Component {
 
     return (
       <div className="footer">
-        <h1>Footer</h1>
+        <Frame color="#111">
+          <PageSection columns="3">
+            <h1>Her</h1>
+            <h1>er</h1>
+            <h1>bunden</h1>
+          </PageSection>
+        </Frame>
       </div>
     );
 

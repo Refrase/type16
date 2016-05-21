@@ -5,6 +5,7 @@ import webpack from 'webpack';
 // Loaders
 
 import assetsLoader from './partials/loaders/scripts';
+import jsonLoader from './partials/loaders/json';
 import scriptsLoader from './partials/loaders/scripts';
 import stylesLoader from './partials/loaders/styles';
 
@@ -38,6 +39,7 @@ const config = {
   module: {
     loaders: [
       assetsLoader,
+      jsonLoader,
       scriptsLoader,
       stylesLoader,
     ],

@@ -2,21 +2,24 @@
 
 %buttonBase {
 
-  border-radius: $borderRadius;
-  border-width: 2px;
-  border-style: solid;
+  position: relative;
   cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
   display: inline-block;
-  font-family: $fontFamily-headline;
-  font-size: $fontSize-base;
-  font-weight: $fontWeight-bold;
+  font-family: $fontFamily-system;
+  font-size: $fontSize-large;
+  line-height: $fontSize-large - 2px;
+  font-weight: $fontWeight-heavy;
   letter-spacing: 1px;
   outline: 0;
-  padding: $scale-1-2;
+  padding: $scale-1-2 $scale;
+  padding-bottom: $scale-1-2 + 2px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: all $animationSpeed $animationBezier;
+  transition: all 0.1s ease-out;
   white-space: nowrap;
 
 }
@@ -25,21 +28,19 @@
 
   @extend %buttonBase;
 
-  color: $color-brandDark;
-  background: $color-brandLight;
-  border-color: $color-brandDark;
+  color: white;
+  background: $color-brandDark;
+  border-color: lighten($color-brandDark, 4%);
 
   &:hover {
-
-    box-shadow: 0px 0px 6px $color-brandDark-darker-1;
-
+    // box-shadow: 0px 8px 12px -6px rgba($color-brandDark, 0.5);
+    box-shadow: 0px 2px 0px 0px $color-brandDark-darker-2;
+    transform: translateY(-2px);
   }
 
   &:active {
-
-    background: $color-brandLight-darker-1;
     box-shadow: none;
-
+    transform: translateY(0px);
   }
 
 }

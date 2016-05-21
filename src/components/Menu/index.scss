@@ -1,27 +1,60 @@
 @import './../../styles/base/vars';
 @import './../../styles/utils/mixins';
+@import './../../styles/utils/animations';
 
 .menu {
 
   position: fixed;
-  overflow-y: scroll;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
   z-index: 9999;
-  width: calc( 100% - #{$scale-2-1} );
-  height: 200px;
-  left: $scale;
+
+  max-width: 400px;
+  height: 100vh;
+  left: 0;
   top: 0;
-  background: rgba(white, 0.97);
-  overflow: hidden;
-  padding: $scale;
+  background: rgba($color-brandDark, 0.96);
+  padding: $scale-3-1;
+  padding-left: $scale-3-1;
+  padding-bottom: 64px;
 
   &_list {
 
     &_element {
+      margin-bottom: $scale;
 
       &_link {
+        position: relative;
+        font-family: $fontFamily-headline;
+        font-size: $fontSize-xxlarge;
+        text-decoration: none;
+        color: $color-brandBlack;
+        letter-spacing: 6px;
+        transition: color 0.2s $animationBezier;
 
+        &:hover {
+          color: white;
+          animation: fadeOut 2s 0.2s forwards;
+        }
 
+        &:active { top: 1px; }
 
+      }
+
+    }
+
+  }
+
+  &_icon {
+
+    &-cross {
+      position: absolute;
+      bottom: $scale-2-1;
+      left: $scale-3-1;
+
+      & span {
+        background: $color-brandBlack;
       }
 
     }
@@ -33,7 +66,7 @@
 // Animation
 $menuAnimation: transform 500ms $animationBezier;
 
-.menuAnimation-enter { transform: translateY(-100vw); }
+.menuAnimation-enter { transform: translateX(-100vw); }
 
 .menuAnimation-enter.menuAnimation-enter-active {
 
@@ -46,7 +79,7 @@ $menuAnimation: transform 500ms $animationBezier;
 
 .menuAnimation-leave.menuAnimation-leave-active {
 
-  transform: translateY(-100vw);
+  transform: translateX(-100vw);
   transition: $menuAnimation;
 
 }

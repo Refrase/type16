@@ -11,6 +11,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 // Components
 
 import Icon from 'components/Icon';
+import PageSection from 'components/PageSection';
 
 // Actions
 
@@ -50,13 +51,19 @@ class Menu extends Component {
 
     return (
       <div className="menu">
-        <Icon which="cross" onClick={ this.closeMenu } />
+        <Icon which="cross" className="menu_icon-cross" onClick={ this.closeMenu } />
         <ul className="menu_list">
           <li className="menu_list_element">
             <a href="#"
               onClick={ (e) => this.goToPath(e, '/about') }
               className="menu_list_element_link">
-              About</a>
+              Philosophy</a>
+          </li>
+          <li className="menu_list_element">
+            <a href="#"
+              onClick={ (e) => this.goToPath(e, '/') }
+              className="menu_list_element_link">
+              Projects</a>
           </li>
         </ul>
       </div>

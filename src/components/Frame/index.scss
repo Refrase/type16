@@ -1,0 +1,10 @@
+@import './../../styles/base/vars';
+@import './../../styles/utils/mixins';
+
+.frame {
+
+  width: $viewportWidthFix;
+  min-height: 100vh;
+  border: 10px solid $color-brandBlack;
+
+}

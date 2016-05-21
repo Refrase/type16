@@ -1,10 +1,39 @@
 @import './../../styles/base/vars';
 @import './../../styles/utils/mixins';
 
+$headerHeight: 24px;
+
 .header {
 
+  height: $headerHeight;
   position: fixed;
-  z-index: 9999;
-  bottom: 0;
+  z-index: 9998;
+  bottom: 44px;
+  left: $scale-3-1;
+
+  &_icon {
+
+    & span {
+      background: $color-brandDark;
+    }
+
+    &-burger {
+
+      & span {
+        background: $color-brandDark;
+      }
+
+    }
+
+    &-chevron {
+
+      position: absolute;
+      top: 9px;
+      left: 48px;
+      transform: rotate( 180deg );
+
+    }
+
+  }
 
 }

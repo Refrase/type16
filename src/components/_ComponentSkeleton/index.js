@@ -26,9 +26,9 @@ class ComponentName extends Component {
   render() {
 
     return (
-
-      <ComponentName>Component</ComponentName>
-
+      <div>
+        Component
+      </div>
     );
 
   }
