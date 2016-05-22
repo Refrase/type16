@@ -4,7 +4,7 @@ import webpack from 'webpack';
 
 // Loaders
 
-import assetsLoader from './partials/loaders/scripts';
+import assetsLoader from './partials/loaders/assets';
 import jsonLoader from './partials/loaders/json';
 import scriptsLoader from './partials/loaders/scripts';
 import stylesLoader from './partials/loaders/styles';

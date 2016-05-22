@@ -7,6 +7,10 @@ import './index.scss';
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
+// components
+
+import PageSection from 'components/PageSection';
+
 // Class
 
 class Project extends Component {
@@ -24,6 +28,7 @@ class Project extends Component {
       className,
       client,
       clientId,
+      imageMain,
       text,
       title,
     } = this.props;
@@ -37,9 +42,16 @@ class Project extends Component {
 
     return (
       <div className={ classes }>
-        <h1 className="margin-bottom">{ title }</h1>
-        <h5 className="margin-bottom-2-1 project_client" style={ stylesClient } id={ clientId }>{ client }</h5>
-        <p className="project_text" dangerouslySetInnerHTML={{ __html: text }} />
+        <PageSection columns="2">
+          <div>
+            <h1 className="margin-bottom">{ title }</h1>
+            <h5 className="margin-bottom-2-1 project_client" style={ stylesClient } id={ clientId }>{ client }</h5>
+            <p className="project_text" dangerouslySetInnerHTML={{ __html: text }} />
+          </div>
+          <div>
+            <img className="project_image" src={ imageMain }></img>
+          </div>
+        </PageSection>
       </div>
     );
 
@@ -54,6 +66,7 @@ Project.propTypes = {
   className: PropTypes.string,
   client: PropTypes.string,
   clientId: PropTypes.string,
+  imageMain: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string,
 };

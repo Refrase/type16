@@ -30,7 +30,7 @@ class Footer extends Component {
     return (
       <div className="footer">
         <Frame color="#111">
-          <PageSection columns="3">
+          <PageSection columns="2">
             <h1>Her</h1>
             <h1>er</h1>
             <h1>bunden</h1>

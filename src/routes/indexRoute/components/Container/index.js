@@ -15,10 +15,11 @@ import inViewport from 'in-viewport';
 import Hero from 'components/Hero';
 import Logo from 'components/Logo';
 import Frame from 'components/Frame';
-import PageSection from 'components/PageSection';
 import Project from 'components/Project';
 
 // Images
+
+import imageRedMain from './assets/markedsorientering-animated-mobile.gif';
 
 // Class
 
@@ -34,12 +35,14 @@ class Container extends Component {
         client: 'RED Property Advisers',
         text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
         colorMain: '#e20613',
+        imageMain: imageRedMain,
       },
       {
         title: 'Salgsbrochure',
         client: 'Nybolig',
         text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
         colorMain: '#03975F',
+        imageMain: null,
       },
     ];
 
@@ -69,7 +72,6 @@ class Container extends Component {
 
       inViewport(projectClient, { offset: -100 }, () => {
         $( projectClient ).addClass( 'project_client-shown' );
-        console.log('inview');
       });
     }
 
@@ -81,14 +83,13 @@ class Container extends Component {
 
     return (
       <Frame key={ index } color={ project.colorMain }>
-        <PageSection columns="3">
-          <Project
-            title={ project.title }
-            client={ project.client }
-            clientId={ id }
-            clientBackground={ project.colorMain }
-            text={ project.text } />
-        </PageSection>
+        <Project
+          title={ project.title }
+          client={ project.client }
+          clientId={ id }
+          clientBackground={ project.colorMain }
+          imageMain={ project.imageMain }
+          text={ project.text } />
       </Frame>
     );
 

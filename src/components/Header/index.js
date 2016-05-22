@@ -69,9 +69,9 @@ class Header extends Component {
     }
 
     if ( !thereIsNextFrame && framesLooped >= framesOnPage.length ) { // If no next frame and all frames looped scroll to top (Hero)
-      framesLooped = 0;
       scrollToId( $( '.hero' ) );
       chevron.removeClass( 'rotateUpsideDown' ); // Rotate chevron back to original direction
+      framesLooped = 0;
     }
 
   }
