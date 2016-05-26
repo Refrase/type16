@@ -44,6 +44,13 @@ class Container extends Component {
             <div>
               <Button linkTo="/" link>Testlink</Button>
             </div>
+            <div>
+              <ul>
+                <li>Playful</li>
+                <li>Devils in the details</li>
+                <li>Etc.</li>
+              </ul>
+            </div>
           </PageSection>
         </Frame>
 

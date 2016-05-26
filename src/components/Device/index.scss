@@ -1,0 +1,43 @@
+@import './../../styles/base/vars';
+
+.device {
+
+  &_wrap {
+    position: relative;
+  }
+
+  &-iPhone {
+    width: 300px;
+
+    &_imageWrap {
+      width: 264px;
+      height: 472px;
+      top: -550px;
+      left: 18px;
+      margin-bottom: -469px;
+      overflow: hidden;
+      position: relative;
+
+      &-scrollbarHide {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+        overflow-y: scroll;
+      }
+
+    }
+
+    &_image {
+      position: absolute;
+      width: 100%;
+    }
+
+  }
+
+  &--iPad {
+
+  }
+
+}

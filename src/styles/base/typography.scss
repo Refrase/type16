@@ -18,6 +18,7 @@ h6 {
 h1 {
   font-size: $fontSize-title;
   letter-spacing: 2px;
+  line-height: 1.2;
 
   @include breakpoint( 'mobileMedium' ) {
     font-size: $fontSize-xxlarge;

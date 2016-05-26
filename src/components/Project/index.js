@@ -10,6 +10,7 @@ import classNames from 'classnames';
 // components
 
 import PageSection from 'components/PageSection';
+import Device from 'components/Device';
 
 // Class
 
@@ -27,30 +28,35 @@ class Project extends Component {
       clientBackground,
       className,
       client,
-      clientId,
-      imageMain,
+      titleId,
+      screen,
       text,
       title,
+      device,
     } = this.props;
 
     const classes = classNames( 'project', {
       [className]: className ? true : null,
     });
 
-    const stylesClient = {};
-    if ( clientBackground ) { stylesClient.background = clientBackground; }
+    const stylesTitle = {};
+    if ( clientBackground ) { stylesTitle.background = clientBackground; }
 
     return (
       <div className={ classes }>
-        <PageSection columns="2">
+        <PageSection columns="4">
           <div>
-            <h1 className="margin-bottom">{ title }</h1>
-            <h5 className="margin-bottom-2-1 project_client" style={ stylesClient } id={ clientId }>{ client }</h5>
+            <h1 className="margin-bottom">{ client }</h1>
+            <h5 className="margin-bottom-2-1 project_title" style={ stylesTitle } id={ titleId }>{ title }</h5>
             <p className="project_text" dangerouslySetInnerHTML={{ __html: text }} />
           </div>
-          <div>
-            <img className="project_image" src={ imageMain }></img>
-          </div>
+          <div></div>
+          { device ? (
+            <div>
+              <Device device={ device } screen={ screen } />
+            </div>
+          ) : null }
+          <div></div>
         </PageSection>
       </div>
     );
@@ -65,8 +71,9 @@ Project.propTypes = {
   clientBackground: PropTypes.string,
   className: PropTypes.string,
   client: PropTypes.string,
-  clientId: PropTypes.string,
-  imageMain: PropTypes.string,
+  device: PropTypes.string,
+  titleId: PropTypes.string,
+  screen: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string,
 };

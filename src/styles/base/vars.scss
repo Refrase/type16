@@ -14,7 +14,7 @@ $scale-1-8: $scale / 8;
 /* ----- Colors ----- */
 
 // ----- Main
-$color-brandDark: #FF3E2F;
+$color-brandDark: #0071BC; // Rød: #FF3E2F
 
 // Main darker
 $color-brandDark-darker-3: darken( $color-brandDark, 30% );
@@ -27,7 +27,7 @@ $color-brandDark-lighter-2: lighten( $color-brandDark, 20% );
 $color-brandDark-lighter-3: lighten( $color-brandDark, 30% );
 
 // ----- Complementary
-$color-brandLight: #FF9E96;
+$color-brandLight: #5BCFEB; // Rød: #FF9E96
 
 // Complementary darker
 $color-brandLight-darker-3: darken( $color-brandLight, 30% );
