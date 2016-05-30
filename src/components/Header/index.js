@@ -45,20 +45,20 @@ class Header extends Component {
 
     const chevron = $( '.header_icon-chevron' );
     const chevronOffsetTop = chevron.offset().top; // Get chevrons position from top
-    const framesOnPage = $( '.frame' ); // Get frames (sections) on page
+    const projectsOnPage = $( '.project' ); // Get projects (sections) on page
 
     let thereIsNextFrame = null;
-    let framesLooped = 0;
+    let projectsLooped = 0;
 
-    for ( let i = 0; i < framesOnPage.length; i++ ) { // Scroll to the next section that is below the chevron
+    for ( let i = 0; i < projectsOnPage.length; i++ ) { // Scroll to the next section that is below the chevron
 
-      framesLooped++;
-      thereIsNextFrame = framesOnPage[i].offsetTop > chevronOffsetTop;
+      projectsLooped++;
+      thereIsNextFrame = projectsOnPage[i].offsetTop > chevronOffsetTop;
 
       if ( thereIsNextFrame ) {
-        scrollToId( framesOnPage[i] );
+        scrollToId( projectsOnPage[i] );
 
-        if ( framesLooped === framesOnPage.length ) { // Rotate the chevron upside down, when arriving to last frame (section)
+        if ( projectsLooped === projectsOnPage.length ) { // Rotate the chevron upside down, when arriving to last project (section)
           chevron.addClass( 'rotateUpsideDown' );
         } else {
           chevron.removeClass( 'rotateUpsideDown' );
@@ -68,10 +68,10 @@ class Header extends Component {
       }
     }
 
-    if ( !thereIsNextFrame && framesLooped >= framesOnPage.length ) { // If no next frame and all frames looped scroll to top (Hero)
+    if ( !thereIsNextFrame && projectsLooped >= projectsOnPage.length ) { // If no next project and all projects looped scroll to top (Hero)
       scrollToId( $( '.hero' ) );
       chevron.removeClass( 'rotateUpsideDown' ); // Rotate chevron back to original direction
-      framesLooped = 0;
+      projectsLooped = 0;
     }
 
   }

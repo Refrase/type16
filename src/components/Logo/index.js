@@ -9,12 +9,12 @@ import $ from 'jquery';
 
 // Assets
 
-import logoletter1 from './assets/logoletter-white-1.svg';
-import logoletter2 from './assets/logoletter-white-2.svg';
-import logoletter3 from './assets/logoletter-white-3.svg';
-import logoletter4 from './assets/logoletter-white-4.svg';
-import logoletter5 from './assets/logoletter-white-5.svg';
-import logoletter6 from './assets/logoletter-white-6.svg';
+import logoletter1 from './assets/logoletter-1.svg';
+import logoletter2 from './assets/logoletter-2.svg';
+import logoletter3 from './assets/logoletter-3.svg';
+import logoletter4 from './assets/logoletter-4.svg';
+import logoletter5 from './assets/logoletter-5.svg';
+import logoletter6 from './assets/logoletter-6.svg';
 
 // Class
 
@@ -38,7 +38,7 @@ class Logo extends Component {
 
     this.randomNumbers = []; // Array of random numbers generated once (below), used to get different scroll speeds
     for ( let i = 0; i < this.logoLetters.length; i++ ) {
-      const randomNumber = (Math.random() + 1.2) * (Math.random() + 1.2);
+      const randomNumber = (Math.random() + 1) * (Math.random() + 1);
       this.randomNumbers.push( randomNumber );
     }
 
@@ -69,7 +69,7 @@ class Logo extends Component {
 
     // Translate whole logo opposite scroll
     const logo = $( '.logoWrap_inner' );
-    const translateAmountLogo = this.state.windowScrollTop * 2.5;
+    const translateAmountLogo = this.state.windowScrollTop;
 
     $( logo ).css({
       transform: `translate3d(0px, ${translateAmountLogo}px, 0px)`, // 'translate3d' force GPU

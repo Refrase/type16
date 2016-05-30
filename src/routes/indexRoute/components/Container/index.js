@@ -46,7 +46,17 @@ class Container extends Component {
         device: null,
         screen: null,
       },
+      {
+        title: 'Test',
+        client: 'Testelse',
+        text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
+        colorMain: '#0055aa',
+        device: null,
+        screen: null,
+      },
     ];
+
+    this.colorsMorph = [];
 
     this.checkForInViewport = this.checkForInViewport.bind(this);
 
@@ -81,19 +91,19 @@ class Container extends Component {
 
   renderProject(project, index) {
 
+    this.colorsMorph.push( project.colorMain );
+
     const id = 'project_title-' + index;
 
     return (
-      <Frame key={ index } color={ project.colorMain }>
-        <Project
-          client={ project.client }
-          clientBackground={ project.colorMain }
-          device={ project.device }
-          screen={ project.screen }
-          text={ project.text }
-          title={ project.title }
-          titleId={ id } />
-      </Frame>
+      <Project key={ index }
+        client={ project.client }
+        clientBackground={ project.colorMain }
+        device={ project.device }
+        screen={ project.screen }
+        text={ project.text }
+        title={ project.title }
+        titleId={ id } />
     );
 
   }
@@ -103,11 +113,13 @@ class Container extends Component {
     return (
       <div className="page-landing">
 
-        <Hero>
-          <Logo animateOnScroll />
-        </Hero>
+          <Hero>
+            <Logo animateOnScroll />
+          </Hero>
 
-        { this.projects.map( (project, index) => this.renderProject(project, index) )}
+          { this.projects.map( (project, index) => this.renderProject(project, index) )}
+
+          <Frame colorsMorph={ this.colorsMorph } />
 
       </div>
     );

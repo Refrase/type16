@@ -12,7 +12,6 @@ import React, { Component } from 'react';
 
 import Button from 'components/Button';
 import Hero from 'components/Hero';
-import Frame from 'components/Frame';
 import PageSection from 'components/PageSection';
 
 // Images
@@ -33,26 +32,24 @@ class Container extends Component {
       <div className="pageAbout">
 
         <Hero>
-          <h1 className="color-brandWhite fontSize-display fontFamily-logo text-transform-uppercase">Philosophy</h1>
+          <h1 className="fontSize-display fontFamily-logo text-transform-uppercase">Philosophy</h1>
         </Hero>
 
-        <Frame>
-          <PageSection columns="3">
-            <div>
-              <Button linkTo="/">Projects</Button>
-            </div>
-            <div>
-              <Button linkTo="/" link>Testlink</Button>
-            </div>
-            <div>
-              <ul>
-                <li>Playful</li>
-                <li>Devils in the details</li>
-                <li>Etc.</li>
-              </ul>
-            </div>
-          </PageSection>
-        </Frame>
+        <PageSection columns="3">
+          <div>
+            <Button linkTo="/">Projects</Button>
+          </div>
+          <div>
+            <Button linkTo="/" link>Testlink</Button>
+          </div>
+          <div>
+            <ul>
+              <li>Playful</li>
+              <li>Devils in the details</li>
+              <li>Etc.</li>
+            </ul>
+          </div>
+        </PageSection>
 
       </div>
     );

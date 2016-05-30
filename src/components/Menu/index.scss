@@ -29,12 +29,12 @@
         font-family: $fontFamily-headline;
         font-size: $fontSize-xxlarge;
         text-decoration: none;
-        color: $color-brandDark;
+        color: $color-brandBlack;
         letter-spacing: 6px;
         transition: color 0.2s $animationBezier;
 
         &:hover {
-          color: $color-brandDark-darker-2;
+          color: $color-brandBlack-lighter-2;
           animation: fadeOut 2s 0.2s forwards;
         }
 
@@ -54,7 +54,7 @@
       left: $scale-3-1;
 
       & span {
-        background: $color-brandDark;
+        background: $color-brandBlack;
       }
 
     }

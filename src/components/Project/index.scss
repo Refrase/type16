@@ -1,6 +1,8 @@
 @import './../../styles/base/vars';
 
 .project {
+  height: 100vh;
+  overflow: hidden;
 
   &_title {
 

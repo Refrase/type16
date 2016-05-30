@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 
 // Components
 
-import Frame from 'components/Frame';
 import PageSection from 'components/PageSection';
 
 // Utilities
@@ -29,11 +28,9 @@ class Footer extends Component {
 
     return (
       <div className="footer">
-        <Frame color="#003456">
-          <PageSection columns="2">
-            <h1>Her er bunden</h1>
-          </PageSection>
-        </Frame>
+        <PageSection columns="2">
+          <h1>Her er bunden</h1>
+        </PageSection>
       </div>
     );
 
