@@ -16,10 +16,6 @@ class Frame extends Component {
 
     super(props);
 
-    this.state = {
-      scrollTop: $( window ).scrollTop(),
-    };
-
     this.changeColorOnScroll = this.changeColorOnScroll.bind(this);
 
   }
@@ -43,22 +39,25 @@ class Frame extends Component {
   changeColorOnScroll() {
 
     const windowHeight = $( window ).height();
+    const documentHeight = $( document ).height();
+    const footerHeight = $( '.footer' ).height();
+    console.log(documentHeight);
+    console.log(footerHeight);
     const frame = $( '.frame' );
-    const newScrollTop = $( window ).scrollTop();
+    const scrollTop = $( window ).scrollTop();
 
     for ( let i = 0; i < this.props.colorsMorph.length; i++ ) {
       const calcSection = (windowHeight / 2) * (i + 1) + (windowHeight / 2 * i); // Change color when halfway down each section
 
-      if ( newScrollTop > this.state.scrollTop && newScrollTop > calcSection ) {
-        frame.css({ 'border-color': this.props.colorsMorph[i] });
-      } else if ( newScrollTop < this.state.scrollTop ) {
-        frame.css({ 'border-color': 'white' });
+      if (scrollTop > windowHeight / 2 &&
+          scrollTop < (documentHeight - windowHeight - footerHeight + 1) ) { // But transparent in top and when hitting the footer
+        if ( scrollTop > calcSection ) {
+          frame.css({ 'border-color': this.props.colorsMorph[i] });
+        }
+      } else {
+        frame.css({ 'border-color': 'transparent' });
       }
     }
-
-    this.setState({
-      scrollTop: newScrollTop,
-    });
 
   }
 
