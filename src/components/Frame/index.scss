@@ -4,6 +4,14 @@
 
   width: $viewportWidthFix;
   min-height: 100vh;
-  border: 10px solid $color-brandBlack;
+  border-left: 10px solid white;
+  transition: border-color 0.6s ease-in;
+
+  &-fixed {
+
+    position: fixed;
+    top: 0;
+
+  }
 
 }
