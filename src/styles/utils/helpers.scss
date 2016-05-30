@@ -12,6 +12,11 @@
 		&-1-4 	{ margin-bottom: 	$scale-1-4; }
 		&-2-1 	{ margin-bottom: 	$scale-2-1; }
 	}
+	&-top 		{ margin-top: 	$scale;
+		&-1-2 	{ margin-top: 	$scale-1-2; }
+		&-1-4 	{ margin-top: 	$scale-1-4; }
+		&-2-1 	{ margin-top: 	$scale-2-1; }
+	}
 }
 
 .fontSize 	{

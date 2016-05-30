@@ -41,8 +41,6 @@ class Frame extends Component {
     const windowHeight = $( window ).height();
     const documentHeight = $( document ).height();
     const footerHeight = $( '.footer' ).height();
-    console.log(documentHeight);
-    console.log(footerHeight);
     const frame = $( '.frame' );
     const scrollTop = $( window ).scrollTop();
 

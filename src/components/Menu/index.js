@@ -51,7 +51,7 @@ class Menu extends Component {
 
     return (
       <div className="menu">
-        <Icon which="cross" className="menu_icon-cross" onClick={ this.closeMenu } />
+
         <ul className="menu_list">
           <li className="menu_list_element">
             <a href="#"
@@ -66,6 +66,9 @@ class Menu extends Component {
               Projects</a>
           </li>
         </ul>
+
+        <Icon which="cross" className="margin-top" onClick={ this.closeMenu } />
+
       </div>
     );
 

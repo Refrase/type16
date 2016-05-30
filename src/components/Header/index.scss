@@ -7,8 +7,9 @@ $headerHeight: 24px;
   height: $headerHeight;
   position: fixed;
   z-index: 9998;
-  bottom: 44px;
-  left: $scale-3-1;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX( -50% );
 
   &_icon {
 
@@ -19,8 +20,8 @@ $headerHeight: 24px;
     &-chevron {
 
       position: absolute;
-      top: 9px;
-      left: 48px;
+      top: 40px;
+      left: 2px;
       transform: rotate( 180deg );
 
     }

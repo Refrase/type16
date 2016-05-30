@@ -47,10 +47,10 @@ class Container extends Component {
         screen: null,
       },
       {
-        title: 'Test',
-        client: 'Testelse',
+        title: 'Hjemmeside',
+        client: 'Ledelseshøjskolen',
         text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
-        colorMain: '#0055aa',
+        colorMain: '#ff5000',
         device: null,
         screen: null,
       },
@@ -91,7 +91,7 @@ class Container extends Component {
 
   renderProject(project, index) {
 
-    this.colorsMorph.push( project.colorMain );
+    this.colorsMorph.push( project.colorMain ); // Create array with all project colors for Frame color-morphing
 
     const id = 'project_title-' + index;
 
