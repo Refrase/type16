@@ -2,23 +2,43 @@
 @import './../utils/animations';
 @import './../utils/breakpoints';
 
-.padding 		{ padding: $scale;
-	&-none 		{ padding: 0 !important; }
-}
+$positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clean .padding/.margin (all sides) option
 
-.margin 		{ margin: 				$scale;
-	&-none 		{ margin: 				0 !important; }
-	&-bottom 	{ margin-bottom: 	$scale;
-		&-1-2 	{ margin-bottom: 	$scale-1-2; }
-		&-1-4 	{ margin-bottom: 	$scale-1-4; }
-		&-2-1 	{ margin-bottom: 	$scale-2-1; }
-	}
-	&-top 		{ margin-top: 	$scale;
-		&-1-2 	{ margin-top: 	$scale-1-2; }
-		&-1-4 	{ margin-top: 	$scale-1-4; }
-		&-2-1 	{ margin-top: 	$scale-2-1; }
-	}
-}
+@each $position in $positions {
+	.padding#{$position}-8-1 { padding#{$position}: $scale-8-1; }
+	.padding#{$position}-7-1 { padding#{$position}: $scale-7-1; }
+	.padding#{$position}-6-1 { padding#{$position}: $scale-6-1; }
+	.padding#{$position}-5-1 { padding#{$position}: $scale-5-1; }
+	.padding#{$position}-4-1 { padding#{$position}: $scale-4-1; }
+	.padding#{$position}-3-1 { padding#{$position}: $scale-3-1; }
+	.padding#{$position}-2-1 { padding#{$position}: $scale-2-1; }
+	.padding#{$position} 	   { padding#{$position}: $scale; }
+	.padding#{$position}-1-2 { padding#{$position}: $scale-1-2; }
+	.padding#{$position}-1-3 { padding#{$position}: $scale-1-3; }
+	.padding#{$position}-1-4 { padding#{$position}: $scale-1-4; }
+	.padding#{$position}-1-5 { padding#{$position}: $scale-1-5; }
+	.padding#{$position}-1-6 { padding#{$position}: $scale-1-6; }
+	.padding#{$position}-1-7 { padding#{$position}: $scale-1-7; }
+	.padding#{$position}-1-8 { padding#{$position}: $scale-1-8; }}
+.padding-none { padding: 0 !important; }
+
+@each $position in $positions {
+	.margin#{$position}-8-1 { margin#{$position}: $scale-8-1; }
+	.margin#{$position}-7-1 { margin#{$position}: $scale-7-1; }
+	.margin#{$position}-6-1 { margin#{$position}: $scale-6-1; }
+	.margin#{$position}-5-1 { margin#{$position}: $scale-5-1; }
+	.margin#{$position}-4-1 { margin#{$position}: $scale-4-1; }
+	.margin#{$position}-3-1 { margin#{$position}: $scale-3-1; }
+	.margin#{$position}-2-1 { margin#{$position}: $scale-2-1; }
+	.margin#{$position} 		{ margin#{$position}: $scale; }
+	.margin#{$position}-1-2 { margin#{$position}: $scale-1-2; }
+	.margin#{$position}-1-3 { margin#{$position}: $scale-1-3; }
+	.margin#{$position}-1-4 { margin#{$position}: $scale-1-4; }
+	.margin#{$position}-1-5 { margin#{$position}: $scale-1-5; }
+	.margin#{$position}-1-6 { margin#{$position}: $scale-1-6; }
+	.margin#{$position}-1-7 { margin#{$position}: $scale-1-7; }
+	.margin#{$position}-1-8 { margin#{$position}: $scale-1-8; }}
+.margin-none { margin: 0 !important; }
 
 .fontSize 	{
 	&-display { font-size: $fontSize-display;

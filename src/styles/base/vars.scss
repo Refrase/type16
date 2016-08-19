@@ -1,14 +1,21 @@
 /* ----- Scale ----- */
 
-$scale: 16px;
+$scale: 12px;
 
+$scale-8-1: $scale * 8;
+$scale-7-1: $scale * 7;
+$scale-6-1: $scale * 6;
 $scale-5-1: $scale * 5;
 $scale-4-1: $scale * 4;
 $scale-3-1: $scale * 3;
 $scale-2-1: $scale * 2;
 
 $scale-1-2: $scale / 2;
+$scale-1-3: $scale / 3;
 $scale-1-4: $scale / 4;
+$scale-1-5: $scale / 5;
+$scale-1-6: $scale / 6;
+$scale-1-7: $scale / 7;
 $scale-1-8: $scale / 8;
 
 /* ----- Colors ----- */

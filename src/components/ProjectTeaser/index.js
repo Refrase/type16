@@ -43,10 +43,14 @@ class ProjectTeaser extends Component {
 
     return (
       <div className={ classes }>
-        <h1 className="margin-bottom">{ client }</h1>
-        <h5 className="margin-bottom-2-1 projectTeaser_title" style={ stylesTitle } id={ titleId }>{ title }</h5>
-        <p className="projectTeaser_text" dangerouslySetInnerHTML={{ __html: text }} />
-        { device ? ( <Device device={ device } screen={ screen } /> ) : null }
+        <div className="projectTeaser_inner">
+          <h1 className="margin-bottom">{ client }</h1>
+          <h5 className="projectTeaser_title margin-bottom-2-1" style={ stylesTitle } id={ titleId }>{ title }</h5>
+          <p className="projectTeaser_text margin-bottom-4-1" dangerouslySetInnerHTML={{ __html: text }} />
+          { device ? (
+          <Device device={ device } screen={ screen } />
+          ) : null }
+        </div>
       </div>
     );
 

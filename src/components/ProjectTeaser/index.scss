@@ -1,10 +1,18 @@
 @import './../../styles/base/vars';
+@import './../../styles/utils/breakpoints';
 
 .projectTeaser {
   height: 100vh;
   overflow: hidden;
   border-bottom: 1px solid $color-brandWhite;
   position: relative;
+
+  &_inner {
+    padding: $scale-3-1 $scale-8-1;
+
+    @include breakpoint( 'tabletBelow' ) { padding: $scale-3-1 $scale-6-1; }
+    @include breakpoint( 'mobile' ) { padding: $scale-2-1 $scale-4-1; }
+  }
 
   &_title {
 
