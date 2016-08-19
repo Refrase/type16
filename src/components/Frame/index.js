@@ -28,6 +28,8 @@ class Frame extends Component {
       });
     }
 
+    $( '#fp-nav' ).css({ transition: 'all 0.5s ease-out' });
+
   }
 
   componentWillUnmount() {
@@ -41,7 +43,8 @@ class Frame extends Component {
     const windowHeight = $( window ).height();
     const documentHeight = $( document ).height();
     const footerHeight = $( '.footer' ).height();
-    const frame = $( '.frame' );
+    const navProjectTeasersDots = $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' );
+    navProjectTeasersDots.addClass( 'transition' );
     const scrollTop = $( window ).scrollTop();
 
     for ( let i = 0; i < this.props.colorsMorph.length; i++ ) {
@@ -50,10 +53,10 @@ class Frame extends Component {
       if (scrollTop > windowHeight / 2 &&
           scrollTop < (documentHeight - windowHeight - footerHeight + 1) ) { // But transparent in top and when hitting the footer
         if ( scrollTop > calcSection ) {
-          frame.css({ 'border-color': this.props.colorsMorph[i] });
+          navProjectTeasersDots.css({ 'background-color': this.props.colorsMorph[i] });
         }
       } else {
-        frame.css({ 'border-color': 'transparent' });
+        navProjectTeasersDots.css({ 'background-color': '#111' });
       }
     }
 
@@ -65,6 +68,7 @@ class Frame extends Component {
       children,
       className,
       color,
+      colorsMorph,
       fixed,
     } = this.props;
 
@@ -72,7 +76,7 @@ class Frame extends Component {
     if ( color ) { styles.borderColor = color; }
 
     const classes = classnames( 'frame', {
-      'frame-fixed': fixed || this.props.colorsMorph ? true : null,
+      'frame-fixed': fixed || colorsMorph ? true : null,
       [className]: className ? true : null,
     });
 

@@ -3,19 +3,21 @@
 // Styles
 
 import './index.scss';
+import './../../../../styles/vendor/fullpagejs.scss';
 
 // Lib
 
 import React, { Component } from 'react';
 import $ from 'jquery';
 import inViewport from 'in-viewport';
+import { fullpage } from 'fullpage.js'; // it actually IS used
 
 // Components
 
 import Hero from 'components/Hero';
 import Logo from 'components/Logo';
 import Frame from 'components/Frame';
-import Project from 'components/Project';
+import ProjectTeaser from 'components/ProjectTeaser';
 
 // Assets
 
@@ -57,14 +59,17 @@ class Container extends Component {
     ];
 
     this.colorsMorph = [];
+    this.projectClients = ['Welcome'];
 
     this.checkForInViewport = this.checkForInViewport.bind(this);
+    this.snapSections = this.snapSections.bind(this);
 
   }
 
   componentDidMount() {
 
     this.checkForInViewport();
+    this.snapSections();
 
   }
 
@@ -73,17 +78,49 @@ class Container extends Component {
     $( window ).off( 'resize', this.checkForInViewport );
     $( window ).off( 'scroll', this.checkForInViewport );
 
+    $.fn.fullpage.destroy('all'); // Destroy fullpage-plugin AND its added styles and markup
+
+  }
+
+  snapSections() {
+
+    // const frame = $( '.frame' ); // Not necessary anymore - see function below
+
+    $('#fullpage').fullpage({
+      keyboardScrolling: true,
+      navigation: true,
+      navigationPosition: 'left',
+      navigationTooltips: this.projectClients,
+      slidesNavigation: null,
+      slidesNavPosition: 'bottom',
+      controlArrows: null,
+      normalScrollElements: '.device', // Normal scroll active when mouse is over these
+      scrollBar: true,
+      fitToSectionDelay: 300,
+      // onLeave: (index, nextIndex) => {
+      // Changing the color of Frame on section change - not necessary anymore after adding the 'scrollBar' option
+      //   for ( let i = 0; i < this.colorsMorph.length + 2; i++ ) { // fullpage.js index starting at 1 + 1 is startpage (therefore '+2')
+      //     if (nextIndex === 1) {
+      //       frame.css({ 'border-color': 'white' });
+      //     } else if (i === nextIndex) {
+      //       frame.css({ 'border-color': this.colorsMorph[i - 2] }); // fullpage.js index starting at 1 + 1 is startpage (therefore '-2')
+      //     }
+      //   }
+      // },
+    });
+
   }
 
   checkForInViewport() {
 
-    const projectsOnPage = $( '.project' );
+    const projectsOnPage = $( '.projectTeaser' );
+    console.log(projectsOnPage);
 
     for ( let i = 0; i < projectsOnPage.length; i++ ) {
-      const projectTitle = document.getElementById( 'project_title-' + i );
+      const projectTitle = document.getElementById( 'projectTeaser_title-' + i );
 
       inViewport(projectTitle, { offset: -100 }, () => {
-        $( projectTitle ).addClass( 'project_title-shown' );
+        $( projectTitle ).addClass( 'projectTeaser_title-shown' );
       });
     }
 
@@ -92,11 +129,12 @@ class Container extends Component {
   renderProject(project, index) {
 
     this.colorsMorph.push( project.colorMain ); // Create array with all project colors for Frame color-morphing
+    this.projectClients.push( project.client ); // Create array with all project clients
 
-    const id = 'project_title-' + index;
+    const id = 'projectTeaser_title-' + index;
 
     return (
-      <Project key={ index }
+      <ProjectTeaser key={ index }
         client={ project.client }
         clientBackground={ project.colorMain }
         device={ project.device }
@@ -113,13 +151,14 @@ class Container extends Component {
     return (
       <div className="page-landing">
 
+        <div id="fullpage">
           <Hero>
             <Logo animateOnScroll />
           </Hero>
-
           { this.projects.map( (project, index) => this.renderProject(project, index) )}
+        </div>
 
-          <Frame colorsMorph={ this.colorsMorph } />
+        <Frame colorsMorph={ this.colorsMorph } color="white" />
 
       </div>
     );

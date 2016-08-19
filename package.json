@@ -17,6 +17,7 @@
     "babel-preset-react": "^6.3.13",
     "classnames": "^2.2.3",
     "express": "^4.13.4",
+    "fullpage.js": "^2.8.1",
     "in-viewport": "^3.4.1",
     "jquery": "^2.2.3",
     "json-loader": "^0.5.4",

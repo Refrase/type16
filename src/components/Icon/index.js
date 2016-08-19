@@ -69,9 +69,11 @@ class Icon extends Component {
       className,
       which,
       onClick,
+      background,
     } = this.props;
 
     const classes = classNames( 'icon', {
+      'icon_inner-background': background ? true : null,
       [className]: className ? true : null,
     });
 
@@ -90,9 +92,10 @@ class Icon extends Component {
 // PropTypes
 
 Icon.propTypes = {
+  background: PropTypes.bool,
   className: PropTypes.string,
-  which: PropTypes.string,
   onClick: PropTypes.func,
+  which: PropTypes.string,
 };
 
 Icon.defaultProps = {

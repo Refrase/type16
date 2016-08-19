@@ -6,13 +6,10 @@
 
   position: fixed;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   z-index: 9999;
-  text-align: center;
 
-  width: 100vw;
+  width: $menuWidth;
   height: 100vh;
   left: 0;
   top: 0;
@@ -20,6 +17,19 @@
   padding: $scale-3-1;
   padding-left: $scale-3-1;
   padding-bottom: 64px;
+
+  &_icon {
+    position: absolute;
+    bottom: auto;
+    top: $scale-1-2;
+    left: 20px;
+    transform: translateX( -50% );
+
+    @include breakpoint( 'mobile' ) {
+      bottom: $scale-1-2;
+      top: auto;
+    }
+  }
 
   &_list {
 
@@ -29,7 +39,7 @@
       &_link {
         position: relative;
         font-family: $fontFamily-headline;
-        font-size: $fontSize-xxlarge;
+        font-size: $fontSize-xlarge;
         text-decoration: none;
         color: $color-brandBlack;
         letter-spacing: 6px;
@@ -53,20 +63,20 @@
 // Animation
 $menuAnimation: transform 500ms $animationBezier;
 
-.menuAnimation-enter { transform: translateY(-100vw); }
+.menuAnimation-enter { transform: translateX(-$menuWidth); }
 
 .menuAnimation-enter.menuAnimation-enter-active {
 
-  transform: translateY(0);
+  transform: translateX(0);
   transition: $menuAnimation;
 
 }
 
-.menuAnimation-leave { transform: translateY(0); }
+.menuAnimation-leave { transform: translateX(0); }
 
 .menuAnimation-leave.menuAnimation-leave-active {
 
-  transform: translateY(-100vw);
+  transform: translateX(-$menuWidth);
   transition: $menuAnimation;
 
 }

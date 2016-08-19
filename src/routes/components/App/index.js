@@ -15,7 +15,6 @@ import { connect } from 'react-redux';
 
 import Header from 'components/Header';
 import Menu from 'components/Menu';
-import Footer from 'components/Footer';
 
 // Utilities
 
@@ -31,6 +30,7 @@ class App extends Component {
 
   }
 
+  // loadOverlay = Non-optimal way to hide load of giant SVG on load
   render() {
 
     const {
@@ -42,11 +42,11 @@ class App extends Component {
     return (
       <div className="app">
         <Header dispatch={ dispatch } />
+        <div className="loadOverlay"></div>
         { children }
         <Menu
           dispatch={ dispatch }
           showingMenu={ showingMenu } />
-        <Footer />
       </div>
     );
 

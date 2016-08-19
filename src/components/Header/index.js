@@ -37,9 +37,13 @@ class Header extends Component {
     e.preventDefault();
     openMenu(this.props.dispatch);
 
+    $( '.frame, #fp-nav' ).addClass( 'menuOpen' );
+    $( '#fp-nav' ).addClass( 'transition' );
+    $( '#fp-nav' ).css({ transform: 'translateX(-4px)' });
+
   }
 
-  handleClickIconChevron(e) {
+  handleClickIconChevron(e) { // ATT! fullpage.js-plugin have to be disabled for this to work
 
     e.preventDefault(); // Prevents flash of Hero-section, when clicking the chevron
 
@@ -84,10 +88,6 @@ class Header extends Component {
           which="burger"
           className="header_icon header_icon-burger"
           onClick={ this.openMenu } />
-        <Icon
-          which="chevron"
-          className="header_icon header_icon-chevron"
-          onClick={ this.handleClickIconChevron } />
       </div>
     );
 

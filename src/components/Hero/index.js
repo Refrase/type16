@@ -28,7 +28,7 @@ class Hero extends Component {
 
     return (
 
-      <div className="hero">
+      <div className="hero section">
         { children }
       </div>
 

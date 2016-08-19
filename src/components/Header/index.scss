@@ -1,17 +1,33 @@
 @import './../../styles/base/vars';
+@import './../../styles/utils/animations';
+@import './../../styles/utils/breakpoints';
 
 $headerHeight: 24px;
+
+@keyframes slideInHeader {
+  0%   { transform: translateX( -40px ); }
+  100% { transform: translateX( 0 ); }
+}
 
 .header {
 
   height: $headerHeight;
   position: fixed;
   z-index: 9998;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX( -50% );
+  bottom: auto;
+  top: 0;
+  left: 10px;
+  transform: translateX( -40px );
+  animation: slideInHeader 1.2s 2.4s $animationBezier forwards; // Waiting for others elements to animate in
+
+  @include breakpoint( 'mobile' ) {
+    bottom: $scale;
+    top: auto;
+  }
 
   &_icon {
+    opacity: 0;
+    animation: fadeIn 1.2s 2.4s ease-out forwards;
 
     & span {
       background: $color-brandBlack;

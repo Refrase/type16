@@ -1,8 +1,10 @@
 @import './../../styles/base/vars';
 
-.project {
+.projectTeaser {
   height: 100vh;
   overflow: hidden;
+  border-bottom: 1px solid $color-brandWhite;
+  position: relative;
 
   &_title {
 
@@ -15,6 +17,7 @@
     transform: rotate( -1deg );
     opacity: 0;
     transition: opacity 0.3s ease-out, left 1s $animationBezier;
+    font-weight: $fontWeight-medium;
 
     &-shown {
 

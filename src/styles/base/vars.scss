@@ -136,6 +136,10 @@ $contentWidth-extraWidescreen: 1000px;
 
 $viewportWidthFix: calc( 100vw - 15px ); // 15px = scrollbar
 
+/* ----- Menu ----- */
+
+$menuWidth: 300px;
+
 /* ----- Animation ----- */
 
 $animationBezier: cubic-bezier(0.1, 0.95, 0.65, 1);
