@@ -29,7 +29,8 @@ class Button extends Component {
       onClick,
       style,
       styling,
-      target } = this.props;
+      target,
+    } = this.props;
 
     let html;
 

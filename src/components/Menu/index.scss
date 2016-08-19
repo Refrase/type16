@@ -18,6 +18,17 @@
   padding-left: $scale-3-1;
   padding-bottom: 64px;
 
+  &_backdrop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.8);
+    animation: fadeIn 0.3s ease-in;
+    pointer-events: none;
+  }
+
   &_icon {
     position: absolute;
     bottom: auto;
@@ -61,14 +72,12 @@
 }
 
 // Animation
-$menuAnimation: transform 500ms $animationBezier;
-
 .menuAnimation-enter { transform: translateX(-$menuWidth); }
 
 .menuAnimation-enter.menuAnimation-enter-active {
 
   transform: translateX(0);
-  transition: $menuAnimation;
+  transition: transform 600ms $animationBezier;
 
 }
 
@@ -77,6 +86,6 @@ $menuAnimation: transform 500ms $animationBezier;
 .menuAnimation-leave.menuAnimation-leave-active {
 
   transform: translateX(-$menuWidth);
-  transition: $menuAnimation;
+  transition: transform 400ms $animationBezier;
 
 }

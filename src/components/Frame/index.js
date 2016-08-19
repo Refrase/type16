@@ -28,8 +28,6 @@ class Frame extends Component {
       });
     }
 
-    $( '#fp-nav' ).css({ transition: 'all 0.5s ease-out' });
-
   }
 
   componentWillUnmount() {

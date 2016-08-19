@@ -10,6 +10,7 @@ import './index.scss';
 
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import $ from 'jquery';
 
 // Components
 
@@ -20,6 +21,10 @@ import Menu from 'components/Menu';
 
 // Constants
 
+// Actions
+
+import { closeMenu } from 'ducks/ui/menu';
+
 // Class
 
 class App extends Component {
@@ -27,6 +32,21 @@ class App extends Component {
   constructor(props) {
 
     super(props);
+
+    this.closeMenu = this.closeMenu.bind(this);
+
+  }
+
+  closeMenu(e) {
+
+    e.preventDefault();
+
+    if ( this.props.showingMenu ) {
+      closeMenu(this.props.dispatch);
+
+      $( '.frame, #fp-nav' ).removeClass( 'menuOpen' );
+      $( '#fp-nav' ).css({ transform: 'translateX(0)' });
+    }
 
   }
 
@@ -40,7 +60,7 @@ class App extends Component {
     } = this.props;
 
     return (
-      <div className="app">
+      <div className="app" onClick={ this.closeMenu }>
         <Header dispatch={ dispatch } />
         <div className="loadOverlay"></div>
         { children }

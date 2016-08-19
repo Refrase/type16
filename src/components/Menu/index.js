@@ -8,11 +8,11 @@ import React, { Component, PropTypes } from 'react';
 import { hashHistory } from 'react-router';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import $ from 'jquery';
+import classNames from 'classnames';
 
 // Components
 
 import Icon from 'components/Icon';
-import PageSection from 'components/PageSection';
 
 // Actions
 
@@ -86,14 +86,26 @@ class Menu extends Component {
 
   render() {
 
+    const {
+      showingMenu,
+    } = this.props;
+
+    const classesBackdrop = classNames( 'menu_backdrop', {
+      fadeIn: showingMenu ? true : null,
+      fadeOut: !showingMenu ? true : null,
+    });
+
     return (
-      <CSSTransitionGroup
-        component="div"
-        transitionName="menuAnimation"
-        transitionEnterTimeout={ 500 }
-        transitionLeaveTimeout={ 500 }>
-          { this.props.showingMenu ? this.renderMenu() : null }
-      </CSSTransitionGroup>
+      <div>
+        <div className={ classesBackdrop }></div>
+        <CSSTransitionGroup
+          component="div"
+          transitionName="menuAnimation"
+          transitionEnterTimeout={ 500 }
+          transitionLeaveTimeout={ 500 }>
+            { showingMenu ? this.renderMenu() : null }
+        </CSSTransitionGroup>
+      </div>
     );
 
   }

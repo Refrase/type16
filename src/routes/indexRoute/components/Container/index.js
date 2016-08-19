@@ -114,7 +114,6 @@ class Container extends Component {
   checkForInViewport() {
 
     const projectsOnPage = $( '.projectTeaser' );
-    console.log(projectsOnPage);
 
     for ( let i = 0; i < projectsOnPage.length; i++ ) {
       const projectTitle = document.getElementById( 'projectTeaser_title-' + i );
@@ -158,7 +157,7 @@ class Container extends Component {
           { this.projects.map( (project, index) => this.renderProject(project, index) )}
         </div>
 
-        <Frame colorsMorph={ this.colorsMorph } color="white" />
+        <Frame colorsMorph={ this.colorsMorph } color="rgba(255,255,255,0.97)" />
 
       </div>
     );
