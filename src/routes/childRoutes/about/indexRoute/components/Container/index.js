@@ -45,6 +45,8 @@ class Container extends Component {
           <div>
             <ul>
               <li>Playful</li>
+              <li>Calm</li>
+              <li>One thing at a time</li>
               <li>Devils in the details</li>
               <li>Etc.</li>
             </ul>

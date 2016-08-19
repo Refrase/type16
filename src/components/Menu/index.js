@@ -7,6 +7,7 @@ import './index.scss';
 import React, { Component, PropTypes } from 'react';
 import { hashHistory } from 'react-router';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import $ from 'jquery';
 
 // Components
 
@@ -37,6 +38,9 @@ class Menu extends Component {
 
     closeMenu(this.props.dispatch);
 
+    $( '.frame, #fp-nav' ).removeClass( 'menuOpen' );
+    $( '#fp-nav' ).css({ transform: 'translateX(0)' });
+
   }
 
   goToPath(e, path) {
@@ -55,19 +59,25 @@ class Menu extends Component {
         <ul className="menu_list">
           <li className="menu_list_element">
             <a href="#"
+              onClick={ (e) => this.goToPath(e, '/') }
+              className="menu_list_element_link">
+              Projects</a>
+          </li>
+          <li className="menu_list_element">
+            <a href="#"
               onClick={ (e) => this.goToPath(e, '/about') }
               className="menu_list_element_link">
               Philosophy</a>
           </li>
           <li className="menu_list_element">
             <a href="#"
-              onClick={ (e) => this.goToPath(e, '/') }
+              onClick={ (e) => this.goToPath(e, '/colab') }
               className="menu_list_element_link">
-              Projects</a>
+              Co-lab</a>
           </li>
         </ul>
 
-        <Icon which="cross" className="margin-top" onClick={ this.closeMenu } />
+        <Icon which="cross" className="menu_icon" onClick={ this.closeMenu } />
 
       </div>
     );

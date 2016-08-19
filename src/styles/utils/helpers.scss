@@ -1,4 +1,5 @@
 @import './../base/vars';
+@import './../utils/animations';
 @import './../utils/breakpoints';
 
 .padding 		{ padding: $scale;
@@ -97,4 +98,6 @@
 .hide { display: none !important; }
 .show { display: block !important; }
 
+.transition {	transition: all 0.6s $animationBezier !important; }
 .rotateUpsideDown { transform: rotate( 360deg ) !important; }
+.menuOpen { left: $menuWidth !important; }

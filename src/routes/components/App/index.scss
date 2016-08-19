@@ -1,9 +1,17 @@
 @import './../../../styles/base/vars';
+@import './../../../styles/utils/animations';
+
+.loadOverlay {
+  position: fixed;
+  width: $viewportWidthFix;
+  height: 100vh;
+  background: white;
+  z-index: 10000;
+  animation: fadeOutAndRemove 0.3s 0.3s ease-out forwards;
+}
 
 .app {
-
   width: $viewportWidthFix;
   min-height: 100vh;
   overflow-x: hidden;
-
 }
