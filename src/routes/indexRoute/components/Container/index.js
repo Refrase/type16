@@ -1,4 +1,4 @@
-/* ----- Landing ----- */
+/* ----- Landing (Projects) ----- */
 
 // Styles
 
@@ -10,7 +10,6 @@ import './../../../../styles/vendor/fullpagejs.scss';
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import $ from 'jquery';
-import inViewport from 'in-viewport';
 import { fullpage } from 'fullpage.js'; // it actually IS used
 
 // Components
@@ -18,7 +17,7 @@ import { fullpage } from 'fullpage.js'; // it actually IS used
 import Hero from 'components/Hero';
 import Logo from 'components/Logo';
 import Frame from 'components/Frame';
-import ProjectTeaser from 'components/ProjectTeaser';
+import Project from 'components/Project';
 
 // Actions
 
@@ -35,7 +34,6 @@ class Container extends Component {
     this.colorsMorph = [];
     this.projectClients = ['Welcome'];
 
-    this.checkForInViewport = this.checkForInViewport.bind(this);
     this.snapSections = this.snapSections.bind(this);
 
   }
@@ -49,7 +47,6 @@ class Container extends Component {
   componentDidUpdate() {
 
     if ( this.props.projects ) {
-      this.checkForInViewport();
       this.snapSections();
     }
 
@@ -58,9 +55,6 @@ class Container extends Component {
   componentWillUnmount() {
 
     resetProjects(this.props.dispatch);
-
-    $( window ).off( 'resize', this.checkForInViewport );
-    $( window ).off( 'scroll', this.checkForInViewport );
 
     $.fn.fullpage.destroy('all'); // Destroy fullpage-plugin AND its added styles and markup
 
@@ -83,37 +77,16 @@ class Container extends Component {
 
   }
 
-  checkForInViewport() {
-
-    const projectsOnPage = $( '.projectTeaser' );
-
-    for ( let i = 0; i < projectsOnPage.length; i++ ) {
-      const projectTitle = document.getElementById( `projectTeaser_title-${i}` );
-
-      inViewport(projectTitle, { offset: -100 }, () => {
-        $( projectTitle ).addClass( 'projectTeaser_title-shown' );
-      });
-    }
-
-  }
-
-  renderProjectTeaser(project, index) {
+  renderProject(project, index) {
 
     this.colorsMorph.push( project.colorMain ); // Create array with all project colors for Frame color-morphing
     this.projectClients.push( project.client ); // Create array with all project clients
 
-    const id = `projectTeaser_title-${index}`;
-
     return (
-      <ProjectTeaser key={ index }
+      <Project key={ index }
         imageCover={ project.images ? project.images.cover : null }
         client={ project.client }
-        clientBackground={ project.colorMain }
-        device={ project.device }
-        screen={ project.screen ? project.screen : null }
-        text={ project.text }
-        title={ project.title }
-        titleId={ id } />
+        url={ `/projects/${project.id}` } />
     );
 
   }
@@ -126,9 +99,9 @@ class Container extends Component {
       <div className="page-landing">
         <div id="fullpage">
           <Hero>
-            { projects ? <Logo animateOnScroll /> : <h1 className="margin-bottom-4-1">Nice sweater!</h1> }
+            { projects ? <Logo animateOnScroll /> : <h1 className="margin-bottom-4-1 fadeIn">Nice sweater!</h1> }
           </Hero>
-          { projects ? ( projects.map( (project, index) => this.renderProjectTeaser(project, index) ) ) : null }
+          { projects ? ( projects.map( (project, index) => this.renderProject(project, index) ) ) : null }
         </div>
         <Frame colorsMorph={ this.colorsMorph } color="rgba(255,255,255,0.97)" />
       </div>

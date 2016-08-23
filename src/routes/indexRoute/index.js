@@ -1,15 +1,15 @@
-const route = {
+// This route: /projects (landingpage)
 
-  getComponent(location, callback) {
+const route = {
+  getComponent(location, cb) {
 
     require.ensure([], (require) => {
 
-      callback(null, require('./components/Container').default);
+      cb(null, require('./components/Container').default);
 
     });
 
   },
-
 };
 
 export default route;

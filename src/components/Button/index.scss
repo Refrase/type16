@@ -14,11 +14,12 @@
   &-inactive {}
 
   &-link {
-    color:  $color-brandDark;
-    font-family: $fontFamily-body;
-    font-size: $fontSize-xlarge;
+    color: $color-brandBlack;
+    font-family: $fontFamily-system;
+    font-size: $fontSize-base;
     font-weight: $fontWeight-bold;
     letter-spacing: 1px;
+    cursor: e-resize;
 
     &:hover {
       text-decoration: none;

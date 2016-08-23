@@ -9,11 +9,12 @@ import classNames from 'classnames';
 
 // Components
 
+import Button from 'components/Button';
 import Device from 'components/Device';
 
 // Class
 
-class ProjectTeaser extends Component {
+class Project extends Component {
 
   constructor( props ) {
 
@@ -32,10 +33,10 @@ class ProjectTeaser extends Component {
       screen,
       text,
       title,
-      titleId,
+      url,
     } = this.props;
 
-    const classes = classNames( 'projectTeaser section', { // 'section' is for fullpage.js plugin
+    const classes = classNames( 'project section', { // 'section' is for fullpage.js plugin
       [className]: className ? true : null,
     });
 
@@ -46,13 +47,12 @@ class ProjectTeaser extends Component {
 
     return (
       <div className={ classes } style={ imageCoverCSS }>
-        <div className="projectTeaser_inner">
-          <h1 className="margin-bottom fontFamily-display fontSize-display fontWeight-normal">{ client }</h1>
-          <h5 className="projectTeaser_title margin-bottom-2-1" style={ stylesTitle } id={ titleId }>{ title }</h5>
-          <p className="projectTeaser_text margin-bottom-4-1" dangerouslySetInnerHTML={{ __html: text }} />
-          { device ? (
-          <Device device={ device } screen={ screen } />
-          ) : null }
+        <div className="project_inner">
+          { client ? ( <h1 className="margin-bottom fontFamily-display fontSize-display fontWeight-normal">{ client }</h1> ) : null }
+          { title ? ( <h5 className="project_title margin-bottom-2-1" style={ stylesTitle } id="project_title">{ title }</h5> ) : null }
+          { text ? ( <p className="project_text margin-bottom-4-1" dangerouslySetInnerHTML={{ __html: text }} /> ) : null }
+          { device ? ( <Device device={ device } screen={ screen } /> ) : null }
+          { url ? ( <Button link linkTo={ url }>Se mere</Button> ) : null }
         </div>
       </div>
     );
@@ -63,7 +63,7 @@ class ProjectTeaser extends Component {
 
 // PropTypes
 
-ProjectTeaser.propTypes = {
+Project.propTypes = {
   className: PropTypes.string,
   client: PropTypes.string,
   clientBackground: PropTypes.string,
@@ -73,12 +73,9 @@ ProjectTeaser.propTypes = {
   text: PropTypes.string,
   title: PropTypes.string,
   titleId: PropTypes.string,
-};
-
-ProjectTeaser.defaultProps = {
-
+  url: PropTypes.string,
 };
 
 // Export
 
-export default ProjectTeaser;
+export default Project;

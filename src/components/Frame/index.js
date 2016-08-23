@@ -41,8 +41,8 @@ class Frame extends Component {
     const windowHeight = $( window ).height();
     const documentHeight = $( document ).height();
     const footerHeight = $( '.footer' ).height();
-    const navProjectTeasersDots = $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' );
-    navProjectTeasersDots.addClass( 'transition' );
+    const navProjectsDots = $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' );
+    navProjectsDots.addClass( 'transition' );
     const scrollTop = $( window ).scrollTop();
 
     for ( let i = 0; i < this.props.colorsMorph.length; i++ ) {
@@ -51,10 +51,10 @@ class Frame extends Component {
       if (scrollTop > windowHeight / 2 &&
           scrollTop < (documentHeight - windowHeight - footerHeight + 1) ) { // But transparent in top and when hitting the footer
         if ( scrollTop > calcSection ) {
-          navProjectTeasersDots.css({ 'background-color': this.props.colorsMorph[i] });
+          navProjectsDots.css({ 'background-color': this.props.colorsMorph[i] });
         }
       } else {
-        navProjectTeasersDots.css({ 'background-color': '#111' });
+        navProjectsDots.css({ 'background-color': '#111' });
       }
     }
 
