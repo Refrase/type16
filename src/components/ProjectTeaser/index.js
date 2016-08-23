@@ -28,6 +28,7 @@ class ProjectTeaser extends Component {
       client,
       clientBackground,
       device,
+      imageCover,
       screen,
       text,
       title,
@@ -41,10 +42,12 @@ class ProjectTeaser extends Component {
     const stylesTitle = {};
     if ( clientBackground ) { stylesTitle.background = clientBackground; }
 
+    const imageCoverCSS = { backgroundImage: `url( ${imageCover} )` };
+
     return (
-      <div className={ classes }>
+      <div className={ classes } style={ imageCoverCSS }>
         <div className="projectTeaser_inner">
-          <h1 className="margin-bottom">{ client }</h1>
+          <h1 className="margin-bottom fontFamily-display fontSize-display fontWeight-normal">{ client }</h1>
           <h5 className="projectTeaser_title margin-bottom-2-1" style={ stylesTitle } id={ titleId }>{ title }</h5>
           <p className="projectTeaser_text margin-bottom-4-1" dangerouslySetInnerHTML={{ __html: text }} />
           { device ? (
@@ -65,6 +68,7 @@ ProjectTeaser.propTypes = {
   client: PropTypes.string,
   clientBackground: PropTypes.string,
   device: PropTypes.string,
+  imageCover: PropTypes.string,
   screen: PropTypes.string,
   text: PropTypes.string,
   title: PropTypes.string,

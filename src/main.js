@@ -11,9 +11,20 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { Router, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import firebase from 'firebase';
 
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);
+
+// Firebase
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyB21xxKnOrkVTJUX3DX4oVlOVLngbVCV5U',
+  authDomain: 'type16-4b4eb.firebaseapp.com',
+  databaseURL: 'https://type16-4b4eb.firebaseio.com',
+  storageBucket: 'type16-4b4eb.appspot.com',
+};
+firebase.initializeApp(firebaseConfig);
 
 // Sync Redux state with React Router
 

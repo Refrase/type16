@@ -91,13 +91,14 @@ $color-redPropertyAdvisers: #e20613;
 /* ----- Font-family ----- */
 
 $fontFamily-logo: 'fatfrank', Helvetica, Arial, Verdana, sans-serif; // First one probably Typekit served
+$fontFamily-display: 'balboa-plus-primary', 'cubano-sharp', Arial, Verdana, sans-serif; // First one probably Typekit served
 $fontFamily-headline: 'cubano-sharp', Arial, Verdana, sans-serif; // First one probably Typekit served
 $fontFamily-body: 'ff-meta-serif-web-pro', Georgia, serif; // First one probably Typekit served
 $fontFamily-system: Courier, Helvetica, sans-serif; // First one probably Typekit served
 
 /* ----- Font-size ----- */
 
-$fontSize-display: 64px;
+$fontSize-display: 80px;
 
 $fontSize-title: 48px;
 $fontSize-subtitle: 28px;
@@ -107,10 +108,10 @@ $fontSize-xxxlarge: 60px;
 $fontSize-xxlarge: 32px;
 $fontSize-xlarge: 26px;
 $fontSize-large: 20px;
-$fontSize-base: 16px;
-$fontSize-small: 14px;
-$fontSize-xsmall: 12px;
-$fontSize-xxsmall: 11px;
+$fontSize-base: 14px;
+$fontSize-small: 12px;
+$fontSize-xsmall: 11px;
+$fontSize-xxsmall: 10px;
 
 /* ----- Font-weight ----- */
 

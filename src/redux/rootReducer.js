@@ -8,6 +8,7 @@ import { routerReducer } from 'react-router-redux';
 
 // Reducers
 
+import consumeProjects from 'ducks/consume/projects';
 import uiMenu from 'ducks/ui/menu';
 
 // Combine reducers
@@ -15,6 +16,9 @@ import uiMenu from 'ducks/ui/menu';
 const rootReducer = combineReducers({
 
   routing: routerReducer,
+  consume: combineReducers({
+    projects: consumeProjects,
+  }),
   ui: combineReducers({
     menu: uiMenu,
   }),

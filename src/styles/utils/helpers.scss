@@ -40,32 +40,32 @@ $positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clea
 	.margin#{$position}-1-8 { margin#{$position}: $scale-1-8; }}
 .margin-none { margin: 0 !important; }
 
-.fontSize 	{
-	&-display { font-size: $fontSize-display;
-		@include breakpoint( 'tablet' ) {
-			font-size: $fontSize-title;
-		}
-		@include breakpoint( 'mobileMedium' ) {
-			font-size: $fontSize-xxlarge;
-		}
-	}
-	&-title 	{ font-size: $fontSize-title;
-		@include breakpoint( 'mobileMedium' ) {
-			font-size: $fontSize-xxlarge;
-		}
-	}
-	&-xxlarge { font-size: $fontSize-xxlarge; }
-	&-xlarge 	{ font-size: $fontSize-xlarge; }
-	&-large 	{ font-size: $fontSize-large; }
-	&-base 		{ font-size: $fontSize-base; }
-	&-small 	{ font-size: $fontSize-small; }
-}
+.font {
 
-.fontFamily {
-	&-logo 		{ font-family: $fontFamily-logo !important; }
-	&-headline{ font-family: $fontFamily-headline !important; }
-	&-body 		{ font-family: $fontFamily-body !important; }
-	&-system 	{ font-family: $fontFamily-system !important; }
+	&Size {
+		&-display { font-size: $fontSize-display;
+			@include breakpoint( 'tablet' ) { font-size: $fontSize-title; }
+			@include breakpoint( 'mobileMedium' ) { font-size: $fontSize-xxlarge; }}
+		&-title 	{ font-size: $fontSize-title;
+			@include breakpoint( 'mobileMedium' ) { font-size: $fontSize-xxlarge; } }
+		&-xxlarge { font-size: $fontSize-xxlarge; }
+		&-xlarge 	{ font-size: $fontSize-xlarge; }
+		&-large 	{ font-size: $fontSize-large; }
+		&-base 		{ font-size: $fontSize-base; }
+		&-small 	{ font-size: $fontSize-small; }}
+
+	&Weight {
+		&-thin 		{ font-weight: $fontWeight-thin; }
+		&-normal 	{ font-weight: $fontWeight-normal; }
+		&-bold 		{ font-weight: $fontWeight-bold; }}
+
+	&Family {
+		&-logo 		{ font-family: $fontFamily-logo !important; }
+		&-display { font-family: $fontFamily-display !important; }
+		&-headline{ font-family: $fontFamily-headline !important; }
+		&-body 		{ font-family: $fontFamily-body !important; }
+		&-system 	{ font-family: $fontFamily-system !important; }}
+
 }
 
 .text {
@@ -119,9 +119,9 @@ $positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clea
 .show { display: block !important; }
 
 // Animation
-.fadeIn 	{ animation: fadeIn 1.2s $animationBezier forwards; }
-.fadeOut 	{ animation: fadeOut 1.2s $animationBezier forwards; }
-.transition {	transition: all 0.6s $animationBezier !important; }
+.fadeIn 					{ animation: fadeIn 1.2s $animationBezier forwards; }
+.fadeOut 					{ animation: fadeOut 1.2s $animationBezier forwards; }
+.transition 			{	transition: all 0.6s $animationBezier !important; }
 .rotateUpsideDown { transform: rotate( 360deg ) !important; }
 
 // Flags

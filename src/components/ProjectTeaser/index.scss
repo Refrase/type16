@@ -6,6 +6,11 @@
   overflow: hidden;
   border-bottom: 1px solid $color-brandWhite;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: center;
+  background-attachment: fixed;
+  background-size: cover;
 
   &_inner {
     padding: $scale-3-1 $scale-8-1;
@@ -15,7 +20,6 @@
   }
 
   &_title {
-
     position: relative;
     left: -20px;
     display: inline-block;
@@ -28,12 +32,12 @@
     font-weight: $fontWeight-medium;
 
     &-shown {
-
       opacity: 1;
       left: 0;
-
     }
-
   }
 
+  &_text {
+    max-width: 400px;
+  }
 }

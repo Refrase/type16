@@ -7,7 +7,8 @@ import './../../../../styles/vendor/fullpagejs.scss';
 
 // Lib
 
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import $ from 'jquery';
 import inViewport from 'in-viewport';
 import { fullpage } from 'fullpage.js'; // it actually IS used
@@ -19,9 +20,9 @@ import Logo from 'components/Logo';
 import Frame from 'components/Frame';
 import ProjectTeaser from 'components/ProjectTeaser';
 
-// Assets
+// Actions
 
-import redMarkedsorienteringPhone from './assets/red-markedsorientering-phone.gif';
+import { getProjects, resetProjects } from 'ducks/consume/projects';
 
 // Class
 
@@ -30,33 +31,6 @@ class Container extends Component {
   constructor(props) {
 
     super(props);
-
-    this.projects = [
-      {
-        title: 'Digitalt Nyhedsbrev',
-        client: 'RED Property Advisers',
-        text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
-        colorMain: '#e20613',
-        device: 'iPhone',
-        screen: redMarkedsorienteringPhone,
-      },
-      {
-        title: 'Salgsbrochure',
-        client: 'Nybolig',
-        text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
-        colorMain: '#03975F',
-        device: null,
-        screen: null,
-      },
-      {
-        title: 'Hjemmeside',
-        client: 'Ledelseshøjskolen',
-        text: 'Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.',
-        colorMain: '#ff5000',
-        device: null,
-        screen: null,
-      },
-    ];
 
     this.colorsMorph = [];
     this.projectClients = ['Welcome'];
@@ -68,12 +42,22 @@ class Container extends Component {
 
   componentDidMount() {
 
-    this.checkForInViewport();
-    this.snapSections();
+    getProjects(this.props.dispatch);
+
+  }
+
+  componentDidUpdate() {
+
+    if ( this.props.projects ) {
+      this.checkForInViewport();
+      this.snapSections();
+    }
 
   }
 
   componentWillUnmount() {
+
+    resetProjects(this.props.dispatch);
 
     $( window ).off( 'resize', this.checkForInViewport );
     $( window ).off( 'scroll', this.checkForInViewport );
@@ -83,8 +67,6 @@ class Container extends Component {
   }
 
   snapSections() {
-
-    // const frame = $( '.frame' ); // Not necessary anymore - see function below
 
     $('#fullpage').fullpage({
       keyboardScrolling: true,
@@ -97,16 +79,6 @@ class Container extends Component {
       normalScrollElements: '.device', // Normal scroll active when mouse is over these
       scrollBar: true,
       fitToSectionDelay: 300,
-      // onLeave: (index, nextIndex) => {
-      // Changing the color of Frame on section change - not necessary anymore after adding the 'scrollBar' option
-      //   for ( let i = 0; i < this.colorsMorph.length + 2; i++ ) { // fullpage.js index starting at 1 + 1 is startpage (therefore '+2')
-      //     if (nextIndex === 1) {
-      //       frame.css({ 'border-color': 'white' });
-      //     } else if (i === nextIndex) {
-      //       frame.css({ 'border-color': this.colorsMorph[i - 2] }); // fullpage.js index starting at 1 + 1 is startpage (therefore '-2')
-      //     }
-      //   }
-      // },
     });
 
   }
@@ -116,7 +88,7 @@ class Container extends Component {
     const projectsOnPage = $( '.projectTeaser' );
 
     for ( let i = 0; i < projectsOnPage.length; i++ ) {
-      const projectTitle = document.getElementById( 'projectTeaser_title-' + i );
+      const projectTitle = document.getElementById( `projectTeaser_title-${i}` );
 
       inViewport(projectTitle, { offset: -100 }, () => {
         $( projectTitle ).addClass( 'projectTeaser_title-shown' );
@@ -125,19 +97,20 @@ class Container extends Component {
 
   }
 
-  renderProject(project, index) {
+  renderProjectTeaser(project, index) {
 
     this.colorsMorph.push( project.colorMain ); // Create array with all project colors for Frame color-morphing
     this.projectClients.push( project.client ); // Create array with all project clients
 
-    const id = 'projectTeaser_title-' + index;
+    const id = `projectTeaser_title-${index}`;
 
     return (
       <ProjectTeaser key={ index }
+        imageCover={ project.images ? project.images.cover : null }
         client={ project.client }
         clientBackground={ project.colorMain }
         device={ project.device }
-        screen={ project.screen }
+        screen={ project.screen ? project.screen : null }
         text={ project.text }
         title={ project.title }
         titleId={ id } />
@@ -147,18 +120,17 @@ class Container extends Component {
 
   render() {
 
+    const { projects } = this.props;
+
     return (
       <div className="page-landing">
-
         <div id="fullpage">
           <Hero>
-            <Logo animateOnScroll />
+            { projects ? <Logo animateOnScroll /> : <h1 className="margin-bottom-4-1">Nice sweater!</h1> }
           </Hero>
-          { this.projects.map( (project, index) => this.renderProject(project, index) )}
+          { projects ? ( projects.map( (project, index) => this.renderProjectTeaser(project, index) ) ) : null }
         </div>
-
         <Frame colorsMorph={ this.colorsMorph } color="rgba(255,255,255,0.97)" />
-
       </div>
     );
 
@@ -169,13 +141,20 @@ class Container extends Component {
 // PropTypes
 
 Container.propTypes = {
-
+  dispatch: PropTypes.func.isRequired,
+  projects: PropTypes.array,
 };
 
-Container.defaultProps = {
+// Mapping
 
-};
+function mapStateToProps(state) {
+
+  return {
+    projects: state.consume.projects.projects,
+  };
+
+}
 
 // Export
 
-export default Container;
+export default connect(mapStateToProps)(Container);
