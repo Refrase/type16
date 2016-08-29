@@ -103,7 +103,7 @@ class Container extends Component {
           </Hero>
           { projects ? ( projects.map( (project, index) => this.renderProject(project, index) ) ) : null }
         </div>
-        <Frame colorsMorph={ this.colorsMorph } color="rgba(255,255,255,0.97)" />
+        <Frame colorsMorph={ this.colorsMorph } color="rgba(0,0,0,0.1)" />
       </div>
     );
 

@@ -33,3 +33,15 @@ $frameWidth: 20px;
   }
 
 }
+
+#fp-nav {
+
+  &.menuOpen {
+
+    & ul li a span {
+      background-color: white !important;
+    }
+
+  }
+
+}

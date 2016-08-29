@@ -101,8 +101,8 @@ class Menu extends Component {
         <CSSTransitionGroup
           component="div"
           transitionName="menuAnimation"
-          transitionEnterTimeout={ 500 }
-          transitionLeaveTimeout={ 500 }>
+          transitionEnterTimeout={ 600 }
+          transitionLeaveTimeout={ 400 }>
             { showingMenu ? this.renderMenu() : null }
         </CSSTransitionGroup>
       </div>

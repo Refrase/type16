@@ -7,6 +7,7 @@
   position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   z-index: 9999;
 
   width: $menuWidth;
@@ -24,10 +25,10 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: rgba(255,255,255,0.8);
+    background: rgba(0,0,0,0.8);
     animation: fadeIn 0.3s ease-in;
     pointer-events: none;
-    display: none; // Disabled for now
+
   }
 
   &_icon {
@@ -44,6 +45,7 @@
   }
 
   &_list {
+    margin-top: $scale;
 
     &_element {
       margin-bottom: $scale;
@@ -74,20 +76,20 @@
 }
 
 // Animation
-.menuAnimation-enter { transform: translateX(-$menuWidth); }
+.menuAnimation-enter { transform: translate3d(-$menuWidth, 0, 0); }
 
 .menuAnimation-enter.menuAnimation-enter-active {
 
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
   transition: transform 600ms $animationBezier;
 
 }
 
-.menuAnimation-leave { transform: translateX(0); }
+.menuAnimation-leave { transform: translate3d(0, 0, 0); }
 
 .menuAnimation-leave.menuAnimation-leave-active {
 
-  transform: translateX(-$menuWidth);
+  transform: translate3d(-$menuWidth, 0, 0);
   transition: transform 400ms $animationBezier;
 
 }
