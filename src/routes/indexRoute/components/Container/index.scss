@@ -1,4 +1,5 @@
 @import './../../../../styles/base/vars';
+@import './../../../../styles/utils/breakpoints';
 
 .page-landing {
 
@@ -7,14 +8,32 @@
     overflow: hidden;
   }
 
-  & .project {
+  .logoWrap { transform: rotate(90deg); }
+
+  .project {
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: 1px solid $color-brandWhite;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: center;
+    background-size: cover;
+
+    &:nth-child(3) { .project_client, .button { color: $color-brandWhite; } }
 
     &_inner {
-      height: 100vh;
+      height: 100%;
       display:flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+
+    &_client {
+      width: 100%;
+      text-align: center;
+      line-height: 1;
     }
 
   }

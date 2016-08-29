@@ -2,15 +2,6 @@
 @import './../../styles/utils/breakpoints';
 
 .project {
-  height: 100vh;
-  overflow: hidden;
-  border-bottom: 1px solid $color-brandWhite;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-origin: center;
-  background-attachment: fixed;
-  background-size: cover;
 
   &_inner {
     padding: $scale-3-1 $scale-8-1;
@@ -19,13 +10,19 @@
     @include breakpoint( 'mobile' ) { padding: $scale-2-1 $scale-4-1; }
   }
 
+  &_client {
+    font-family: $fontFamily-display;
+    font-size: $fontSize-display;
+    font-weight: 400;
+  }
+
   &_title {
     position: relative;
     left: -20px;
     display: inline-block;
     color: white;
     padding: $scale-1-4 $scale-1-2;
-    background: $color-redPropertyAdvisers;
+    background: $color-brandBlack;
     transform: rotate( -1deg );
     opacity: 0;
     transition: opacity 0.3s ease-out, left 1s $animationBezier;

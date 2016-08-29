@@ -48,7 +48,7 @@ class Project extends Component {
     return (
       <div className={ classes } style={ imageCoverCSS }>
         <div className="project_inner">
-          { client ? ( <h1 className="margin-bottom fontFamily-display fontSize-display fontWeight-normal">{ client }</h1> ) : null }
+          { client ? ( <h1 className="project_client margin-bottom">{ client }</h1> ) : null }
           { title ? ( <h5 className="project_title margin-bottom-2-1" style={ stylesTitle } id="project_title">{ title }</h5> ) : null }
           { text ? ( <p className="project_text margin-bottom-4-1" dangerouslySetInnerHTML={{ __html: text }} /> ) : null }
           { device ? ( <Device device={ device } screen={ screen } /> ) : null }

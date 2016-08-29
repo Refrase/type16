@@ -50,11 +50,12 @@
 
       &_link {
         position: relative;
-        font-family: $fontFamily-headline;
+        font-family: $fontFamily-display;
+        text-transform: uppercase;
         font-size: $fontSize-xlarge;
         text-decoration: none;
         color: $color-brandBlack;
-        letter-spacing: 6px;
+        letter-spacing: 5px;
         transition: color 0.2s $animationBezier;
 
         &:hover {
