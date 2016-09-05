@@ -1,3 +1,7 @@
+// Data
+
+import projects from '../../../data/projects';
+
 // ActionsTypes
 
 export const actionTypes = {
@@ -9,7 +13,7 @@ export const actionTypes = {
 // Reducer
 
 const initialState = {
-  projects: null,
+  projects: [],
   isFetching: null,
 };
 
@@ -47,35 +51,34 @@ export default function reducer(state = initialState, action = null) {
 // Actions
 
 export function resetProjects(dispatch = null) {
+
   if (!dispatch) return;
 
   dispatch({
     type: actionTypes.RESET,
   });
+
 }
 
 export function getProjects(dispatch = null) {
 
-  if (!dispatch) return ('Error: dispatch was not provided.');
+  if (!dispatch) return console.log('Error: dispatch was not provided.');
 
   dispatch({
     type: actionTypes.READ_REQUEST,
   });
 
-  const projectsRef = firebase.database().ref('projects'); // firebase defined in main.js
-
-  return projectsRef
-  .on( 'value', (snapshot) => {
+  if ( projects ) {
 
     dispatch({
       type: actionTypes.READ_COMPLETE,
-      payload: snapshot.val() || null,
+      payload: JSON.parse(projects).projects || null,
     });
 
-  }, (errorObject) => {
+  } else {
 
-    console.log( `The read failed: ${errorObject.code}` );
+    console.log('Couldn\'t find projects.');
 
-  });
+  }
 
 }
