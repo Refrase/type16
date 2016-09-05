@@ -35,6 +35,11 @@ class Container extends Component {
     this.projectClients = ['Welcome'];
 
     this.snapSections = this.snapSections.bind(this);
+    this.onProjectsLoad = this.onProjectsLoad.bind(this);
+
+    this.state = {
+      projectsLoaded: null,
+    };
 
   }
 
@@ -42,12 +47,20 @@ class Container extends Component {
 
     getProjects(this.props.dispatch);
 
+    if ( this.state.projectsLoaded ) {
+      $.fn.fullpage.reBuild();
+    }
+
   }
 
   componentDidUpdate() {
 
     if ( this.props.projects ) {
-      this.snapSections();
+      if ( !this.state.projectsLoaded ) {
+        this.onProjectsLoad();
+      } else {
+        $.fn.fullpage.reBuild();
+      }
     }
 
   }
@@ -57,6 +70,17 @@ class Container extends Component {
     resetProjects(this.props.dispatch);
 
     $.fn.fullpage.destroy('all'); // Destroy fullpage-plugin AND its added styles and markup
+
+  }
+
+  // Initialize snap-to-section functionality only one time (when projects have loaded)
+  onProjectsLoad() {
+
+    this.snapSections();
+
+    this.setState({
+      projectsLoaded: true,
+    });
 
   }
 
