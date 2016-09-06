@@ -2,6 +2,7 @@
   "projects" : [ {
     "client" : "RED Property Advisers",
     "colorMain" : "#e20613",
+    "colorTextOverlay" : "#111",
     "device" : "iPhone",
     "id" : "red",
     "images" : {
@@ -11,22 +12,24 @@
       "phone" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-phone.gif?alt=media&token=8fcfa6cc-67ed-4010-afb0-23153929b0cf"
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
-    "title" : "Digitalt Nyhedsbrev"
+    "title" : "Digital Newsletter"
   }, {
-    "client" : "Nybolig",
-    "colorMain" : "#03975F",
-    "id" : "nybolig",
+    "client" : "Relibond",
+    "colorMain" : "#2E72B9",
+    "colorTextOverlay" : "#fff",
+    "id" : "relibond",
     "images" : {
-      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/udrulning-nybolig-01.jpg?alt=media&token=a6fd8d78-ea51-4562-a3c9-a360685b2d30"
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/martin-og-christian-vaerksted.jpg?alt=media&token=3f2270a0-b588-47d3-86ef-5dae7e7255b0"
     },
     "screens" : {
       "phone" : null
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
-    "title" : "Salgsbrochure"
+    "title" : "Website"
   }, {
     "client" : "W.H.Y.Y",
     "colorMain" : "#E6E2B7",
+    "colorTextOverlay" : "#111",
     "id" : "whyy",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/udrulning-whyy-01.jpg?alt=media&token=7868806c-0535-4409-bff6-4c69d5e8572b"
@@ -35,6 +38,6 @@
       "phone" : null
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
-    "title" : "Illustrationer"
+    "title" : "Illustrations"
   } ]
 }

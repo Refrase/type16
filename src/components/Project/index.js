@@ -44,6 +44,7 @@ class Project extends Component {
     if ( clientBackground ) { stylesTitle.background = clientBackground; }
 
     const imageCoverCSS = { backgroundImage: `url( ${imageCover} )` };
+    const overlayCSS = { backgroundColor: clientBackground };
 
     return (
       <div className={ classes } style={ imageCoverCSS }>
@@ -54,6 +55,7 @@ class Project extends Component {
           { device ? ( <Device device={ device } screen={ screen } /> ) : null }
           { url ? ( <Button link linkTo={ url }>Se mere</Button> ) : null }
         </div>
+        { clientBackground ? ( <div className="project_overlay" style={ overlayCSS } /> ) : null }
       </div>
     );
 

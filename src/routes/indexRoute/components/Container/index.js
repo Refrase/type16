@@ -23,6 +23,10 @@ import Project from 'components/Project';
 
 import { getProjects, resetProjects } from 'ducks/consume/projects';
 
+// Utils
+
+import { changeColorOnScroll } from 'utils/changeColorOnScroll';
+
 // Class
 
 class Container extends Component {
@@ -32,10 +36,13 @@ class Container extends Component {
     super(props);
 
     this.colorsMorph = [];
+    this.colorsTextOverlay = [];
     this.projectClients = ['Welcome'];
 
     this.snapSections = this.snapSections.bind(this);
     this.onProjectsLoad = this.onProjectsLoad.bind(this);
+    this.moveOverlay = this.moveOverlay.bind(this);
+    this.initChangeColorOnScroll = this.initChangeColorOnScroll.bind(this);
 
     this.state = {
       projectsLoaded: null,
@@ -58,6 +65,7 @@ class Container extends Component {
     if ( this.props.projects ) {
       if ( !this.state.projectsLoaded ) {
         this.onProjectsLoad();
+        this.moveOverlay();
       } else {
         $.fn.fullpage.reBuild();
       }
@@ -71,12 +79,16 @@ class Container extends Component {
 
     $.fn.fullpage.destroy('all'); // Destroy fullpage-plugin AND its added styles and markup
 
+    $( window ).off( 'scroll', changeColorOnScroll );
+    $( window ).off( 'mousemove', this.moveOverlay() );
+
   }
 
   // Initialize snap-to-section functionality only one time (when projects have loaded)
   onProjectsLoad() {
 
     this.snapSections();
+    this.initChangeColorOnScroll();
 
     this.setState({
       projectsLoaded: true,
@@ -101,14 +113,48 @@ class Container extends Component {
 
   }
 
+  initChangeColorOnScroll() {
+    const navProjectsDots = $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' );
+    navProjectsDots.addClass( 'transition' );
+    const iconBurger = $( '.header_icon-burger' ).children( '.icon_inner' ).children( 'span' );
+
+    if ( this.colorsMorph ) {
+      $( window ).on( 'scroll', () => {
+        setTimeout( changeColorOnScroll( navProjectsDots, this.colorsTextOverlay ), 300 );
+        setTimeout( changeColorOnScroll( iconBurger, this.colorsTextOverlay ), 300 );
+      });
+    }
+  }
+
+  moveOverlay() {
+
+    const overlay = $( '.project_overlay' );
+
+    $( window ).on( 'mousemove', overlay, (e) => {
+
+      let x = null;
+      const halfWindowWidth = $( window ).width() / 2;
+      const moveFactor = 0.003;
+      const mousePosMinusHalfWidth = e.clientX - halfWindowWidth;
+
+      if ( e.clientX > halfWindowWidth ) { x = mousePosMinusHalfWidth * -moveFactor * (mousePosMinusHalfWidth); }
+
+      overlay.css( 'transform', `translate3d(${x}px, 0, 0)` );
+
+    });
+
+  }
+
   renderProject(project, index) {
 
-    this.colorsMorph.push( project.colorMain ); // Create array with all project colors for Frame color-morphing
+    this.colorsMorph.push( project.colorMain ); // Create array with all project colors
+    this.colorsTextOverlay.push( project.colorTextOverlay ); // Create array with all preferred textcolor on main color
     this.projectClients.push( project.client ); // Create array with all project clients
 
     return (
       <Project key={ index }
         imageCover={ project.images ? project.images.cover : null }
+        clientBackground={ project.colorMain }
         client={ project.client }
         url={ `/projects/${project.id}` } />
     );
@@ -127,7 +173,6 @@ class Container extends Component {
           </Hero>
           { projects ? ( projects.map( (project, index) => this.renderProject(project, index) ) ) : null }
         </div>
-        <Frame colorsMorph={ this.colorsMorph } color="rgba(0,0,0,0.1)" />
       </div>
     );
 

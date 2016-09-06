@@ -13,14 +13,27 @@
   .project {
     height: 100vh;
     overflow: hidden;
-    border-bottom: 1px solid $color-brandWhite;
     position: relative;
     background-repeat: no-repeat;
     background-position: center;
     background-origin: center;
     background-size: cover;
 
-    &:nth-child(3) { .project_client, .button { color: $color-brandWhite; } }
+    &:nth-child(3) {
+      .project_client, .button { color: $color-brandWhite; }
+      .button:after { color: $color-brandWhite !important; }
+    }
+
+    & .button {
+      position: relative;
+
+      &:after {
+        content: "\2192";
+        // background-image: url( './assets/arrow-long.svg' ) no-repeat;
+        position: absolute;
+        right: -24px;
+      }
+    }
 
     &_inner {
       height: 100%;

@@ -3,8 +3,20 @@
 
 .project {
 
+  &_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.9;
+  }
+
   &_inner {
     padding: $scale-3-1 $scale-8-1;
+    position: relative;
+    z-index: 2;
 
     @include breakpoint( 'tabletBelow' ) { padding: $scale-3-1 $scale-6-1; }
     @include breakpoint( 'mobile' ) { padding: $scale-2-1 $scale-4-1; }

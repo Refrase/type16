@@ -29,10 +29,6 @@ $headerHeight: 24px;
     opacity: 0;
     animation: fadeIn 1.2s 2.4s ease-out forwards;
 
-    & span {
-      background: $color-brandBlack;
-    }
-
     &-chevron {
 
       position: absolute;

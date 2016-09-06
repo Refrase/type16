@@ -216,14 +216,16 @@ html.fp-enabled,
         li {
             .fp-tooltip {
                 position: absolute;
-                top: -8px;
-                left: 22px;
-                color: #fff;
-                font-size: 14px;
+                top: -3px;
+                left: 8px;
+                color: $color-brandBlack;
+                font-size: 10px;
                 font-family: $fontFamily-system, arial, helvetica, sans-serif;
-                font-weight: $fontWeight-medium;
+                font-weight: $fontWeight-bold;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                word-spacing: -1.5px;
                 white-space: nowrap;
-                max-width: 220px;
                 overflow: hidden;
                 display: block;
                 opacity: 0;
@@ -231,7 +233,7 @@ html.fp-enabled,
                 cursor: pointer;
                 padding: $scale-1-2 $scale;
                 padding-bottom: $scale-1-2 + 2px;
-                background: $color-brandBlack;
+                // background: $color-brandBlack;
 
                 &.right {
                     right: 20px;
