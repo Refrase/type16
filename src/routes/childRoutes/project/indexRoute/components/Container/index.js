@@ -14,6 +14,7 @@ import $ from 'jquery';
 // Components
 
 import Project from 'components/Project';
+import KeywordBlocks from 'components/KeywordBlocks';
 
 // Actions
 
@@ -28,6 +29,7 @@ class Container extends Component {
     super(props);
 
     this.checkForInViewport = this.checkForInViewport.bind(this);
+    this.renderProject = this.renderProject.bind(this);
 
   }
 
@@ -71,13 +73,21 @@ class Container extends Component {
     const projectIdMatchesUrl = project.id === this.props.params.projectId;
 
     return projectIdMatchesUrl ? (
-      <Project key={ index }
-        client={ project.client }
-        clientBackground={ project.colorMain }
-        title={ project.title }
-        text={ project.text }
-        device={ project.device ? project.device : null }
-        screen={ project.screens ? project.screens.phone : null } />
+      <div>
+        <Project
+          key={ index }
+          client={ project.client }
+          clientBackground={ project.colorBackground }
+          title={ project.title }
+          text={ project.text }
+          device={ project.device ? project.device : null }
+          screen={ project.screens ? project.screens.phone : null } />
+        { project.keywords ?
+          <KeywordBlocks
+            words={ project.keywords }
+            colors={ project.colors } />
+        : null }
+      </div>
     ) : null;
 
   }
@@ -88,7 +98,7 @@ class Container extends Component {
 
     return (
       <div className="page-project">
-        { projects ? ( projects.map( (project, index) => this.renderProject(project, index) ) ) : null }
+        { projects ? ( projects.map((project, index) => ( this.renderProject(project, index) ))) : null }
       </div>
     );
 

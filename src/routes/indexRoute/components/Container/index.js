@@ -147,14 +147,14 @@ class Container extends Component {
 
   renderProject(project, index) {
 
-    this.colorsMorph.push( project.colorMain ); // Create array with all project colors
+    this.colorsMorph.push( project.colorBackground ); // Create array with all project colors
     this.colorsTextOverlay.push( project.colorTextOverlay ); // Create array with all preferred textcolor on main color
     this.projectClients.push( project.client ); // Create array with all project clients
 
     return (
       <Project key={ index }
         imageCover={ project.images ? project.images.cover : null }
-        clientBackground={ project.colorMain }
+        clientBackground={ project.colorBackground }
         client={ project.client }
         url={ `/projects/${project.id}` } />
     );
