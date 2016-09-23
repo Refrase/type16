@@ -17,15 +17,9 @@ import classnames from 'classnames';
 
 class PageSection extends Component {
 
-  constructor(props) {
-
-    super(props);
-
-  }
-
+  constructor(props) { super(props); }
 
   render() {
-
     const {
       alignItems,
       children,
@@ -58,17 +52,12 @@ class PageSection extends Component {
     if ( style ) styles = Object.assign({}, styles, style);
 
     return (
-      <div className={ classes } style={ styles }>
-        { children }
-      </div>
+      <div className={ classes } style={ styles }>{ children }</div>
     );
-
   }
-
 }
 
 // PropTypes
-
 PageSection.propTypes = {
   children: PropTypes.node,
   columns: PropTypes.string,
@@ -81,10 +70,5 @@ PageSection.propTypes = {
   styles: PropTypes.object,
 };
 
-PageSection.defaultProps = {
-
-};
-
 // Export
-
 export default PageSection;

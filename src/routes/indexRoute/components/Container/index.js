@@ -42,7 +42,13 @@ class Container extends Component {
     this.snapSections = this.snapSections.bind(this);
     this.onProjectsLoad = this.onProjectsLoad.bind(this);
     this.moveOverlay = this.moveOverlay.bind(this);
+    this.fadeOverlay = this.fadeOverlay.bind(this);
     this.initChangeColorOnScroll = this.initChangeColorOnScroll.bind(this);
+
+    // For fadeOverlay or moveOverlay function
+    this.nonMoveAreaSize = 80; // Percent of screen in which the transform is NOT triggered
+    this.nonMoveArea = $( window ).width() * (this.nonMoveAreaSize / 100);
+    this.moveArea = $( window ).width() - this.nonMoveArea;
 
     this.state = {
       projectsLoaded: null,
@@ -58,6 +64,11 @@ class Container extends Component {
       $.fn.fullpage.reBuild();
     }
 
+    $( window ).on( 'resize', () => {
+      this.nonMoveArea = $( window ).width() * (this.nonMoveAreaSize / 100);
+      this.moveArea = $( window ).width() - this.nonMoveArea;
+    });
+
   }
 
   componentDidUpdate() {
@@ -65,7 +76,7 @@ class Container extends Component {
     if ( this.props.projects ) {
       if ( !this.state.projectsLoaded ) {
         this.onProjectsLoad();
-        this.moveOverlay();
+        this.fadeOverlay();
       } else {
         $.fn.fullpage.reBuild();
       }
@@ -80,7 +91,8 @@ class Container extends Component {
     $.fn.fullpage.destroy('all'); // Destroy fullpage-plugin AND its added styles and markup
 
     $( window ).off( 'scroll', changeColorOnScroll );
-    $( window ).off( 'mousemove', this.moveOverlay() );
+    $( window ).off( 'mousemove' );
+    $( window ).off( 'resize' );
 
   }
 
@@ -126,20 +138,44 @@ class Container extends Component {
     }
   }
 
+  fadeOverlay() {
+
+    const overlay = $( '.project_overlay' );
+
+    let opacity = null;
+
+    $( window ).on( 'mousemove', overlay, (e) => {
+
+      const mousePosMinusNonMoveArea = e.clientX - this.nonMoveArea;
+
+      if ( e.clientX > this.nonMoveArea ) {
+        opacity = 1 - (((mousePosMinusNonMoveArea / (this.moveArea / 100)) + 0.9) / 100) - 0.1;
+        overlay.css( 'opacity', opacity );
+      } else {
+        overlay.css( 'opacity', 0.9 );
+      }
+
+    });
+
+  }
+
   moveOverlay() {
 
     const overlay = $( '.project_overlay' );
 
+    let xPos = null;
+    const moveFactor = 1 / (1 - (this.nonMoveAreaSize / 100));
+
     $( window ).on( 'mousemove', overlay, (e) => {
 
-      let x = null;
-      const halfWindowWidth = $( window ).width() / 2;
-      const moveFactor = 0.003;
-      const mousePosMinusHalfWidth = e.clientX - halfWindowWidth;
+      const mousePosMinusNonMoveArea = e.clientX - this.nonMoveArea;
 
-      if ( e.clientX > halfWindowWidth ) { x = mousePosMinusHalfWidth * -moveFactor * (mousePosMinusHalfWidth); }
-
-      overlay.css( 'transform', `translate3d(${x}px, 0, 0)` );
+      if ( e.clientX > this.nonMoveArea ) {
+        xPos = mousePosMinusNonMoveArea * -moveFactor;
+        overlay.css( 'transform', `translate3d(${xPos}px, 0, 0)` );
+      } else {
+        overlay.css( 'transform', 'translate3d(0, 0, 0)' );
+      }
 
     });
 

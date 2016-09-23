@@ -12,6 +12,8 @@ import classnames from 'classnames';
 // Images
 
 import iPhone from './assets/iphone.svg';
+import iPad from './assets/ipad.svg';
+import Mac from './assets/mac.svg';
 
 // Class
 
@@ -33,10 +35,10 @@ class Device extends Component {
 
         return (
           <div className="device_wrap">
-            <img src={ iPhone } className="device-iPhone" />
-            <div className="device-iPhone_imageWrap">
-              <div className="device-iPhone_imageWrap-scrollbarHide">
-                <img src={ screen } className="device-iPhone_image" />
+            <img src={ iPhone } className="device device-iPhone" />
+            <div className="device_imageWrap device_imageWrap-iPhone">
+              <div className="device_scrollbarHide">
+                <img src={ screen } className="device_image" />
               </div>
             </div>
           </div>
@@ -45,8 +47,26 @@ class Device extends Component {
       case 'iPad' :
 
         return (
-          <div>
-            <h1>Test iPad</h1>
+          <div className="device_wrap">
+            <img src={ iPad } className="device device-iPad" />
+            <div className="device_imageWrap device_imageWrap-iPad">
+              <div className="device_scrollbarHide">
+                <img src={ screen } className="device_image" />
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'Mac' :
+
+        return (
+          <div className="device_wrap">
+            <img src={ iPhone } className="device device-mac" />
+            <div className="device_imageWrap device_imageWrap-mac">
+              <div className="device_scrollbarHide">
+                <img src={ screen } className="device_image" />
+              </div>
+            </div>
           </div>
         );
 

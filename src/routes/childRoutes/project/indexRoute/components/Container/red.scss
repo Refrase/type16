@@ -1,0 +1,12 @@
+.red {
+
+  .devices {
+    align-items: flex-end;
+    display: flex;
+  }
+
+  .device {
+    &-iPhone {right: -100px;}
+    &-iPad {}
+  }
+}

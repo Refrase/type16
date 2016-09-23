@@ -97,7 +97,7 @@ class Menu extends Component {
 
     return (
       <div>
-        <div className={ classesBackdrop }></div>
+        { showingMenu ? ( <div className={ classesBackdrop }></div> ) : null }
         <CSSTransitionGroup
           component="div"
           transitionName="menuAnimation"

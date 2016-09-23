@@ -4,28 +4,39 @@
     "colors": ["#efefef", "#fff", "#e20613"],
     "colorBackground": "#e20613",
     "colorTextOverlay" : "#111",
-    "device" : "iPhone",
+    "devices" : {
+      "phone": "iPhone",
+      "tablet": "iPad"
+    },
     "id" : "red",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-cover.jpg?alt=media&token=1fa3b037-3be3-401f-9011-db0f0c0858be"
     },
     "screens" : {
-      "phone" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-phone.gif?alt=media&token=8fcfa6cc-67ed-4010-afb0-23153929b0cf"
+      "phone" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-phone.gif?alt=media&token=8fcfa6cc-67ed-4010-afb0-23153929b0cf",
+      "tablet" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-desktop.gif?alt=media&token=5e5a741a-fe60-4171-9a88-e3e1a10b977b",
+      "desktop": null
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
     "title" : "Digital Newsletter",
-    "keywords": ["Simple", "To the bone", "Recognizable"]
+    "keywords": ["Simple", "Lightweight", "Recognizable"]
   }, {
     "client" : "Relibond",
     "colors": ["#2E72B9"],
     "colorBackground": "#2E72B9",
     "colorTextOverlay" : "#fff",
+    "devices" : {
+      "phone": null,
+      "tablet": null
+    },
     "id" : "relibond",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/martin-og-christian-vaerksted.jpg?alt=media&token=3f2270a0-b588-47d3-86ef-5dae7e7255b0"
     },
     "screens" : {
-      "phone" : null
+      "phone" : null,
+      "tablet" : null,
+      "desktop": null
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
     "title" : "Website",
@@ -35,12 +46,18 @@
     "colors": ["#E6E2B7"],
     "colorBackground": "#E6E2B7",
     "colorTextOverlay" : "#111",
+    "devices" : {
+      "phone": null,
+      "tablet": null
+    },
     "id" : "whyy",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/udrulning-whyy-01.jpg?alt=media&token=7868806c-0535-4409-bff6-4c69d5e8572b"
     },
     "screens" : {
-      "phone" : null
+      "phone" : null,
+      "tablet" : null,
+      "desktop": null
     },
     "text" : "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
     "title" : "Illustrations",

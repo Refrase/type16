@@ -1,44 +1,44 @@
 @import './../../styles/base/vars';
 
 .device {
+  max-width: 100%;
+
+  &-iPhone { width: 300px; }
+  &-iPad { width: 750px; }
 
   &_wrap {
     position: relative;
-    display: inline-block;
-  }
+    display: inline-block; }
 
-  &-iPhone {
-    width: 300px;
+  &_image {
+    position: absolute;
+    width: 100%; }
 
-    &_imageWrap {
-      width: 264px;
-      height: 472px;
-      top: -550px;
-      left: 18px;
-      margin-bottom: -469px;
-      overflow: hidden;
-      position: relative;
+  &_scrollbarHide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
+    overflow-y: scroll; }
 
-      &-scrollbarHide {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: -17px; /* Increase/Decrease this value for cross-browser compatibility */
-        overflow-y: scroll;
-      }
+  &_imageWrap {
+    position: absolute;
+    overflow: hidden;
 
-    }
+    &-iPhone {
+      width: 87.85%;
+      height: 75.5%;
+      top: 11.9%;
+      left: 6.075%; }
 
-    &_image {
-      position: absolute;
-      width: 100%;
-    }
+    &-iPad {
+      width: 95%;
+      height: 85.8%;
+      top: 6.5%;
+      left: 2.5%; }
 
-  }
-
-  &--iPad {
-
+    &-mac {}
   }
 
 }

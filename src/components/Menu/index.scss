@@ -28,7 +28,7 @@
     background: rgba(0,0,0,0.8);
     animation: fadeIn 0.3s ease-in;
     pointer-events: none;
-
+    z-index: 9998;
   }
 
   &_icon {

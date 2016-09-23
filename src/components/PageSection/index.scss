@@ -2,47 +2,33 @@
 @import './../../styles/utils/breakpoints';
 
 .pageSection {
-
   display: flex;
   flex-wrap: wrap;
   padding: $scale-2-1 0;
   margin: 0 auto;
 
-  @include breakpoint( 'desktop' ) {
+  // Initial grid
+  & > * { padding: $scale; }
+  & > * {
+    max-width: percentage(1/8); // Desktop (8 columns now)
+    @include breakpoint( 'tablet' ) { max-width: percentage(1/5); } // Tablet (5 columns now)
+    @include breakpoint( 'mobile' ) { max-width: percentage(1/3); }} // Tablet (3 columns now)
 
-    width: $contentWidth-desktop;
+  // Content-widths
+  @include breakpoint( 'desktop' )         { width: $contentWidth-desktop; }
+  @include breakpoint( 'tablet' )          { width: $contentWidth-tablet; padding: $scale; }
+  @include breakpoint( 'widescreen' )      { width: $contentWidth-widescreen; }
+  @include breakpoint( 'extraWidescreen' ) { width: $contentWidth-extraWidescreen; }
 
-  }
-
-  @include breakpoint( 'tablet' ) {
-
-    width: $contentWidth-tablet;
-    padding: $scale;
-
-  }
-
-  @include breakpoint( 'widescreen' ) {
-
-    width: $contentWidth-widescreen;
-
-  }
-
-  @include breakpoint( 'extraWidescreen' ) {
-
-    width: $contentWidth-extraWidescreen;
-
-  }
-
-  &-columns {
-
-    & > * { padding: $scale; }
-    &-2 > * { flex-basis: 50%; }
-    &-3 > * { flex-basis: 33.33333%; }
-    &-4 > * { flex-basis: 25%; }
-    &-6 > * { flex-basis: 16.66666%; }
-    &-8 > * { flex-basis: 12.5%; }
-    &-12 > * { flex-basis: 8.33333%; }
-
-  }
-
+  & h1 { margin-bottom: $scale-2-1; }
+  
 }
+
+// Grid
+$numbers: 2 3 4 5 6 7 8 9 10 11 12;
+@each $number in $numbers {
+  .pageSection > *.span-#{$number} { max-width: percentage(1/8 * $number); } // Initial state (when no columns="" is added to the PageSection component) (8 columns now)
+  .pageSection > *.offset-#{$number} { margin-left: percentage(1/8 * $number); }
+  .pageSection-columns-#{$number} > * { max-width: percentage(1/$number); } // Set number of columns with 'columns="X"'
+  .pageSection-columns-#{$number} > *.span-#{$number} { max-width: percentage(1/$number * $number); }
+  .pageSection-columns-#{$number} > *.offset-#{$number} { margin-left: percentage(1/$number * $number); }} // Set num. of columns to span for direct children with the class 'span-X'
