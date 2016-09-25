@@ -63,12 +63,12 @@ class Container extends Component {
       { projectRed ? (
         <div>
           <PageSection className="red">
-            <div className="span-3">
+            <div className="span-5 span-8-tablet span-10-mobile">
               <h1>Alle skærme tænkt ind.</h1>
               <p>{ project.text }</p>
             </div>
             { project.devices && project.screens ? (
-            <div className="devices span-5 offset-3">
+            <div className="devices span-6 offset-1 span-8-tablet offset-4-tablet span-12-mobile offset-0-mobile margin-top-4-1">
               { project.devices.phone && project.screens.phone ? ( <Device device={ project.devices.phone } screen={ project.screens.phone } /> ) : null }
               { project.devices.tablet && project.screens.tablet ? ( <Device device={ project.devices.tablet } screen={ project.screens.tablet } /> ) : null }
             </div>

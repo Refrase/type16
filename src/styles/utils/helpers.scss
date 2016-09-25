@@ -118,6 +118,11 @@ $positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clea
 .hide { display: none !important; }
 .show { display: block !important; }
 
+.float {
+	&-right { float: right; }
+	&-left { float: left; }
+}
+
 // Animation
 .fadeIn 					{ animation: fadeIn 1.2s $animationBezier forwards; }
 .fadeOut 					{ animation: fadeOut 1.2s $animationBezier forwards; }

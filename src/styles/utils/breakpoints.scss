@@ -32,6 +32,14 @@
 
     }
 
+  } @else if $class == 'tabletOnly' {
+
+    @media (min-width: 481px) and (max-width: 768px) {
+
+      @content;
+
+    }
+
   } @else if $class == 'tablet' {
 
     @media (max-width: 768px) {

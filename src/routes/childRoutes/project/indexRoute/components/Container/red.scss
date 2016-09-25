@@ -6,7 +6,12 @@
   }
 
   .device {
-    &-iPhone {right: -100px;}
-    &-iPad {}
+    &_wrap {
+      &-iPhone {
+        position: relative;
+        right: -30%;
+        z-index: 1; }
+      &-iPad {}
+    }
   }
 }
