@@ -15,7 +15,7 @@ import classnames from 'classnames';
 
 // Class
 
-class PageSection extends Component {
+class GridBlock extends Component {
 
   constructor(props) { super(props); }
 
@@ -31,18 +31,18 @@ class PageSection extends Component {
       width,
     } = this.props;
 
-    const classes = classnames( 'pageSection pageSection-columns', {
-      'pageSection-columns-2': columns === '2',
-      'pageSection-columns-3': columns === '3',
-      'pageSection-columns-4': columns === '4',
-      'pageSection-columns-5': columns === '5',
-      'pageSection-columns-6': columns === '6',
-      'pageSection-columns-7': columns === '7',
-      'pageSection-columns-8': columns === '8',
-      'pageSection-columns-9': columns === '9',
-      'pageSection-columns-10': columns === '10',
-      'pageSection-columns-11': columns === '11',
-      'pageSection-columns-12': !columns || columns === '12',
+    const classes = classnames( 'gridBlock gridBlock-columns', {
+      'gridBlock-columns-2': columns === '2',
+      'gridBlock-columns-3': columns === '3',
+      'gridBlock-columns-4': columns === '4',
+      'gridBlock-columns-5': columns === '5',
+      'gridBlock-columns-6': columns === '6',
+      'gridBlock-columns-7': columns === '7',
+      'gridBlock-columns-8': columns === '8',
+      'gridBlock-columns-9': columns === '9',
+      'gridBlock-columns-10': columns === '10',
+      'gridBlock-columns-11': columns === '11',
+      'gridBlock-columns-12': !columns || columns === '12',
       [className]: className ? true : null,
     });
 
@@ -62,7 +62,7 @@ class PageSection extends Component {
 }
 
 // PropTypes
-PageSection.propTypes = {
+GridBlock.propTypes = {
   children: PropTypes.node,
   columns: PropTypes.string,
   className: PropTypes.string,
@@ -75,4 +75,4 @@ PageSection.propTypes = {
 };
 
 // Export
-export default PageSection;
+export default GridBlock;

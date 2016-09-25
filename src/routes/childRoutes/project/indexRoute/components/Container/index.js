@@ -11,7 +11,7 @@ import inViewport from 'in-viewport';
 import $ from 'jquery';
 
 // Components
-import PageSection from 'components/PageSection';
+import GridBlock from 'components/GridBlock';
 import KeywordBlocks from 'components/KeywordBlocks';
 import Device from 'components/Device';
 
@@ -62,7 +62,7 @@ class Container extends Component {
 
       { projectRed ? (
         <div>
-          <PageSection className="red">
+          <GridBlock className="red">
             <div className="span-5 span-8-tablet span-10-mobile">
               <h1>Alle skærme tænkt ind.</h1>
               <p>{ project.text }</p>
@@ -73,7 +73,7 @@ class Container extends Component {
               { project.devices.tablet && project.screens.tablet ? ( <Device device={ project.devices.tablet } screen={ project.screens.tablet } /> ) : null }
             </div>
             ) : null }
-          </PageSection>
+          </GridBlock>
           { project.keywords ? (
           <div>
             <KeywordBlocks
