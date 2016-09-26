@@ -19,13 +19,16 @@
     z-index: 2;
 
     @include breakpoint( 'tabletBelow' ) { padding: $scale-3-1 $scale-6-1; }
-    @include breakpoint( 'mobile' ) { padding: $scale-2-1 $scale-4-1; }
+    @include breakpoint( 'mobile' )      { padding: $scale-2-1 $scale-4-1; }
   }
 
   &_client {
     font-family: $fontFamily-display;
     font-size: $fontSize-display;
     font-weight: 400;
+
+    @include breakpoint( 'tabletBelow' ) { font-size: $fontSize-display-tablet; }
+    @include breakpoint( 'mobile' )      { font-size: $fontSize-display-mobile; }
   }
 
   &_title {

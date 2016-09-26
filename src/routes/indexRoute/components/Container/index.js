@@ -191,6 +191,7 @@ class Container extends Component {
       <Project key={ index }
         imageCover={ project.images ? project.images.cover : null }
         clientBackground={ project.colorBackground }
+        colorTextOverlay={ project.colorTextOverlay }
         client={ project.client }
         url={ `/projects/${project.id}` } />
     );

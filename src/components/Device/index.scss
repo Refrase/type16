@@ -5,6 +5,7 @@
 
   &-iPhone { width: 300px; }
   &-iPad { width: 750px; }
+  &-mac { width: 1440px; }
 
   &_wrap {
     position: relative;
@@ -40,7 +41,12 @@
       top: 6.5%;
       left: 2.5%; }
 
-    &-mac {}
+    &-mac {
+      width: 92.8%;
+      height: 62.6%;
+      top: 4.5%;
+      left: 3.5%;
+    }
   }
 
 }

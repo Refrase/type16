@@ -9,13 +9,12 @@
   border-radius: 2px;
   display: inline-block;
   font-family: $fontFamily-system;
-  font-size: $fontSize-large;
+  font-size: $fontSize-small;
   line-height: $fontSize-large - 2px;
   font-weight: $fontWeight-heavy;
   letter-spacing: 1px;
   outline: 0;
-  padding: $scale-1-2 $scale;
-  padding-bottom: $scale-1-2 + 2px;
+  padding: $scale-1-3 $scale;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;

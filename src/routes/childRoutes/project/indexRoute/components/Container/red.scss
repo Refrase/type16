@@ -1,8 +1,13 @@
+@import './../../../../../../styles/utils/breakpoints';
+
 .red {
 
   .devices {
     align-items: flex-end;
     display: flex;
+    margin-bottom: -100px;
+
+    @include breakpoint( 'mobile' ) { margin-bottom: auto; }
   }
 
   .device {

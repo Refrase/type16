@@ -19,20 +19,19 @@ class Footer extends Component {
   render() {
     const stylesLogo = {};
     stylesLogo.opacity = 0.05;
-    stylesLogo.maxWidth = '100px';
-
-    const stylesCopyright = {};
-    stylesCopyright.opacity = 0.1;
+    stylesLogo.maxWidth = '70px';
 
     return (
       <div className="footer">
-        <GridBlock columns="3">
-          <div><img src={ logoBlack } style={ stylesLogo } /></div>
-          <div className="display-flex justifyContent-center">
+        <GridBlock columns="3" className="display-flex flexDirection-column-mobile justifyContent-center alignItems-center">
+          <div className="span-3-mobile display-flex alignItems-center">
+            <img src={ logoBlack } style={ stylesLogo } />
+          </div>
+          <div className="span-3-mobile display-flex justifyContent-center">
             <Button styling="secondary" linkTo="/">Andre projekter</Button>
           </div>
-          <div className="display-flex justifyContent-flexEnd">
-            <p style={ stylesCopyright }>Copyright &copy; 2016</p>
+          <div className="span-3-mobile display-flex justifyContent-flexEnd alignItems-center">
+            <p className="fontSize-xsmall color-brandWhite">Copyright &copy; 2016</p>
           </div>
         </GridBlock>
       </div>

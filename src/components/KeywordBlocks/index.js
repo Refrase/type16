@@ -3,6 +3,7 @@ import './index.scss';
 
 // Libraries
 import React, { Component, PropTypes } from 'react';
+import classnames from 'classnames';
 
 // Components
 import GridBlock from 'components/GridBlock';
@@ -10,41 +11,38 @@ import GridBlock from 'components/GridBlock';
 // Class
 class KeywordBlocks extends Component {
 
-  constructor(props) {
-
-    super(props);
-
-  }
+  constructor(props) { super(props); }
 
   render() {
 
     const {
       words,
       colors,
+      textCenter,
     } = this.props;
+
+    const classesBlock = classnames( 'keywordBlocks_block', {
+      'keywordBlocks_block-textCenter': textCenter ? true : null,
+    });
 
     const styles = [{}, {}, {}];
     if ( colors ) { styles[0].background = colors[0]; }
     if ( colors ) { styles[1].background = colors[1]; }
     if ( colors ) { styles[2].background = colors[2]; }
 
+    // Map out the three keywords - with each of the three main colors as background
+    // Wrap in GridBlock depending on if the text should be centered
     return (
       <div className="keywordBlocks">
-        <div className="keywordBlocks_block" style={ styles[0] }>
-          <GridBlock>
-            <h1>{ words[0] }</h1>
-          </GridBlock>
-        </div>
-        <div className="keywordBlocks_block" style={ styles[1] }>
-          <GridBlock>
-            <h1>{ words[1] }</h1>
-          </GridBlock>
-        </div>
-        <div className="keywordBlocks_block" style={ styles[2] }>
-          <GridBlock>
-            <h1>{ words[2] }</h1>
-          </GridBlock>
-        </div>
+        { words.map( (word, index) => (
+          <div key={ index } className={ classesBlock } style={ styles[index] }>
+            { !textCenter ? (
+              <GridBlock><h1>{ word }</h1></GridBlock>
+            ) : (
+              <h1>{ word }</h1>
+            )}
+          </div>
+        ))}
       </div>
     );
 
@@ -53,17 +51,12 @@ class KeywordBlocks extends Component {
 }
 
 // PropTypes
-
 KeywordBlocks.propTypes = {
   children: PropTypes.node,
   words: PropTypes.array,
   colors: PropTypes.array,
-};
-
-KeywordBlocks.defaultProps = {
-
+  textCenter: PropTypes.bool,
 };
 
 // Export
-
 export default KeywordBlocks;

@@ -3,6 +3,7 @@
 // Styles
 import './index.scss';
 import './red.scss';
+import './relibond.scss';
 
 // Lib
 import React, { Component, PropTypes } from 'react';
@@ -57,9 +58,14 @@ class Container extends Component {
 
     const projectIdMatchesUrl = project.id === this.props.params.projectId;
     const projectRed = this.props.params.projectId === 'red';
+    const projectRelibond = this.props.params.projectId === 'relibond';
 
-    const stylesHeadlineGraph = {};
-    stylesHeadlineGraph.textAlign = 'center';
+    const stylesRedHeadlineGraph = {};
+    stylesRedHeadlineGraph.textAlign = 'center';
+
+    const stylesRelibondLastBlockBackground = {};
+    const pattern = project.images.patterns ? `url( ${project.images.patterns[0]} )` : null;
+    stylesRelibondLastBlockBackground.backgroundImage = pattern;
 
     return projectIdMatchesUrl ? (
       <div key={ index }>
@@ -68,8 +74,8 @@ class Container extends Component {
         <div className="red">
           <GridBlock>
             <div className="span-5 span-8-tablet span-10-mobile">
-              <h1 className="margin-bottom-2-1">All screens considered.</h1>
-              <p>{ project.text }</p>
+              <h1 className="margin-bottom-2-1">{ project.headline }</h1>
+              <p>{ project.texts[0] }</p>
             </div>
             { project.devices && project.screens ? (
             <div className="devices span-6 offset-1 span-8-tablet offset-4-tablet span-12-mobile offset-0-mobile margin-top-4-1">
@@ -85,10 +91,46 @@ class Container extends Component {
           ) : null }
           <div>
             <div className="display-flex justifyContent-center">
-              <h2 style={ stylesHeadlineGraph } className="padding-3-1 position-absolute">Message condensed.</h2>
+              <h2 style={ stylesRedHeadlineGraph } className="padding-3-1 position-absolute">Message condensed.</h2>
             </div>
-            { project.images.graphBlueprint ? ( <img src={ project.images.graphBlueprint } /> ) : null }
+            { project.images.blueprints.graph ? ( <img src={ project.images.blueprints.graph } /> ) : null }
           </div>
+        </div>
+      ) : null }
+
+      { projectRelibond ? (
+        <div className="relibond">
+          <GridBlock>
+            <div className="span-5 span-8-tablet span-10-mobile">
+              <h1 className="margin-bottom-2-1">{ project.headline }</h1>
+              <p>{ project.texts[0] }</p>
+            </div>
+            { project.devices && project.screens ? (
+            <div className="devices span-8 offset-4 span-10-tablet offset-2-tablet span-12-mobile offset-0-mobile">
+              { project.devices.desktop && project.screens.desktop ? ( <Device device={ project.devices.desktop } screen={ project.screens.desktop } /> ) : null }
+            </div>
+            ) : null }
+          </GridBlock>
+          <div>
+            { project.images.blueprints.logo ? ( <img src={ project.images.blueprints.logo } className="relibond_blueprint-logo" /> ) : null }
+            <h5 className="margin-left relibond_blueprint-logoText">Logo</h5>
+          </div>
+          { project.keywords ? (
+          <KeywordBlocks textCenter
+            words={ project.keywords }
+            colors={ project.colors } />
+          ) : null }
+          <GridBlock>
+            <div className="span-5 span-8-tablet span-12-mobile">
+              <h3 className="margin-bottom">Cool headline</h3>
+              <p>{ project.texts[1] }</p>
+            </div>
+            <div className="span-8 offset-4 span-7-tablet offset-4-tablet span-11-mobile offset-1-mobile">
+              <img src={ project.images.illustrations[0] } width="100%" />
+            </div>
+          </GridBlock>
+          <div style={ stylesRelibondLastBlockBackground } className="relibond_block-last_background flipHorizontal"></div>
+          <img src={ project.images.cover } width="100%" className="flipHorizontal" />
         </div>
       ) : null }
 

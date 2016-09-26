@@ -9,7 +9,7 @@ import $ from 'jquery';
 // Images
 import iPhone from './assets/iphone.svg';
 import iPad from './assets/ipad.svg';
-import Mac from './assets/mac.svg';
+import Mac from './assets/mac2.svg';
 
 // Class
 class Device extends Component {

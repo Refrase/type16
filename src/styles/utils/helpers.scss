@@ -51,7 +51,8 @@ $positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clea
 		&-xlarge 	{ font-size: $fontSize-xlarge; }
 		&-large 	{ font-size: $fontSize-large; }
 		&-base 		{ font-size: $fontSize-base; }
-		&-small 	{ font-size: $fontSize-small; }}
+		&-small 	{ font-size: $fontSize-small; }
+		&-xsmall 	{ font-size: $fontSize-xsmall; }}
 	&Weight {
 		&-thin 		{ font-weight: $fontWeight-thin; }
 		&-normal 	{ font-weight: $fontWeight-normal; }
@@ -127,8 +128,24 @@ $positions: '-top' '-right' '-bottom' '-left' ''; // One left blank for the clea
 
 // Flex
 .justifyContent {
-	&-center { justify-content: center; }
+	&-center 	{ justify-content: center; }
+	&-flexStart { justify-content: flex-start; }
 	&-flexEnd { justify-content: flex-end; }}
+
+.alignItems {
+	&-center 		{ align-items: center; }
+	&-flexStart { align-items: flex-start; }
+	&-flexEnd 	{ align-items: flex-end; }}
+
+.flexDirection {
+	&-row 		 { flex-direction: row; }
+	&-column 	 { flex-direction: column;
+		&-mobile { @include breakpoint( 'mobile' ) { flex-direction: column; } }
+	}
+}
+
+.flipHorizontal { transform: scaleX(-1); }
+.flipVertical 	{ transform: scaleY(-1); }
 
 // Animation
 .fadeIn 					{ animation: fadeIn 1.2s $animationBezier forwards; }
