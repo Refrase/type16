@@ -17,14 +17,14 @@ class Device extends Component {
   constructor(props) {
     super(props);
     this.renderDevice = this.renderDevice.bind(this);
-    this.stopBodyHover = this.stopBodyHover.bind(this);
+    this.stopBodyScroll = this.stopBodyScroll.bind(this);
   }
 
   componentDidMount() {
-    this.stopBodyHover();
+    // this.stopBodyScroll();
   }
 
-  stopBodyHover() {
+  stopBodyScroll() {
     $( '.device' ).mouseenter( () => {
       $( 'html, body' ).css( 'overflow', 'hidden' );
     }).mouseleave( () => {

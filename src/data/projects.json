@@ -10,7 +10,8 @@
     },
     "id" : "red",
     "images" : {
-      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-cover.jpg?alt=media&token=1fa3b037-3be3-401f-9011-db0f0c0858be"
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-cover.jpg?alt=media&token=1fa3b037-3be3-401f-9011-db0f0c0858be",
+      "graphBlueprint" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-graph-blueprint.svg?alt=media&token=8f1286aa-9d31-489f-b149-d6bbec0fe369"
     },
     "screens" : {
       "phone" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-phone.gif?alt=media&token=8fcfa6cc-67ed-4010-afb0-23153929b0cf",

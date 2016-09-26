@@ -14,6 +14,7 @@ import $ from 'jquery';
 import GridBlock from 'components/GridBlock';
 import KeywordBlocks from 'components/KeywordBlocks';
 import Device from 'components/Device';
+import Footer from 'components/Footer';
 
 // Actions
 import { getProjects, resetProjects } from 'ducks/consume/projects';
@@ -57,14 +58,17 @@ class Container extends Component {
     const projectIdMatchesUrl = project.id === this.props.params.projectId;
     const projectRed = this.props.params.projectId === 'red';
 
+    const stylesHeadlineGraph = {};
+    stylesHeadlineGraph.textAlign = 'center';
+
     return projectIdMatchesUrl ? (
       <div key={ index }>
 
       { projectRed ? (
-        <div>
-          <GridBlock className="red">
+        <div className="red">
+          <GridBlock>
             <div className="span-5 span-8-tablet span-10-mobile">
-              <h1>Alle skærme tænkt ind.</h1>
+              <h1 className="margin-bottom-2-1">All screens considered.</h1>
               <p>{ project.text }</p>
             </div>
             { project.devices && project.screens ? (
@@ -75,12 +79,16 @@ class Container extends Component {
             ) : null }
           </GridBlock>
           { project.keywords ? (
-          <div>
-            <KeywordBlocks
-              words={ project.keywords }
-              colors={ project.colors } />
-          </div>
+          <KeywordBlocks
+            words={ project.keywords }
+            colors={ project.colors } />
           ) : null }
+          <div>
+            <div className="display-flex justifyContent-center">
+              <h2 style={ stylesHeadlineGraph } className="padding-3-1 position-absolute">Message condensed.</h2>
+            </div>
+            { project.images.graphBlueprint ? ( <img src={ project.images.graphBlueprint } /> ) : null }
+          </div>
         </div>
       ) : null }
 
@@ -91,7 +99,12 @@ class Container extends Component {
 
   render() {
     const { projects } = this.props;
-    return ( <div>{ projects ? ( projects.map((project, index) => ( this.renderProject(project, index) ))) : null }</div> );
+    return (
+      <div>
+        { projects ? ( projects.map((project, index) => ( this.renderProject(project, index) ))) : null }
+        <Footer />
+      </div>
+    );
   }
 
 }

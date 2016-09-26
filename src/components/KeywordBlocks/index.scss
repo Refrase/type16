@@ -4,11 +4,15 @@
 
   &_block {
     width: 100%;
-    height: 100px;
+    height: 120px;
     display: flex;
-    justify-content: center;
     align-items: center;
     text-transform: uppercase;
+
+    & h1 {
+      font-family: $fontFamily-display;
+      font-weight: 100;
+    }
   }
 
 }

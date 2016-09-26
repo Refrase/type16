@@ -12,7 +12,7 @@ import React, { Component } from 'react';
 
 import Button from 'components/Button';
 import Hero from 'components/Hero';
-import PageSection from 'components/PageSection';
+import GridBlock from 'components/GridBlock';
 
 // Images
 
@@ -32,10 +32,10 @@ class Container extends Component {
       <div className="pageAbout">
 
         <Hero>
-          <h1 className="fontSize-display fontFamily-logo text-transform-uppercase">Philosophy</h1>
+          <h1 className="fontSize-display fontFamily-logo textTransform-uppercase">Philosophy</h1>
         </Hero>
 
-        <PageSection columns="3">
+        <GridBlock columns="3">
           <div>
             <Button linkTo="/">Projects</Button>
           </div>
@@ -51,7 +51,7 @@ class Container extends Component {
               <li>Etc.</li>
             </ul>
           </div>
-        </PageSection>
+        </GridBlock>
 
       </div>
     );

@@ -1,9 +1,7 @@
 // Babel
-
 import 'babel-polyfill';
 
 // Libraries
-
 import React from 'react';
 import configureStore from './redux/store';
 import routes from './routes';
@@ -17,7 +15,6 @@ const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);
 
 // Firebase
-
 const firebaseConfig = {
   apiKey: 'AIzaSyB21xxKnOrkVTJUX3DX4oVlOVLngbVCV5U',
   authDomain: 'type16-4b4eb.firebaseapp.com',
@@ -27,7 +24,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Sync Redux state with React Router
-
 const history = syncHistoryWithStore(hashHistory, store);
 
 render(

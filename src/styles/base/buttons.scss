@@ -29,12 +29,33 @@
   @extend %buttonBase;
 
   color: white;
-  background: $color-brandDark;
-  border-color: lighten($color-brandDark, 4%);
+  background: $color-brandBlack;
+  border-color: lighten($color-brandBlack, 4%);
 
   &:hover {
     // box-shadow: 0px 8px 12px -6px rgba($color-brandDark, 0.5);
-    box-shadow: 0px 2px 0px 0px $color-brandDark-darker-2;
+    box-shadow: 0px 2px 0px 0px $color-brandBlack-darker-2;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0px);
+  }
+
+}
+
+%buttonSecondary {
+
+  @extend %buttonBase;
+
+  color: $color-brandBlack-lighter-3;
+  background: $color-brandWhite;
+  border-color: lighten($color-brandWhite, 4%);
+
+  &:hover {
+    // box-shadow: 0px 8px 12px -6px rgba($color-brandDark, 0.5);
+    box-shadow: 0px 2px 0px 0px $color-brandWhite-darker-2;
     transform: translateY(-2px);
   }
 

@@ -1,13 +1,13 @@
 // Styles
-
 import './index.scss';
 
 // Libraries
-
 import React, { Component, PropTypes } from 'react';
 
-// Class
+// Components
+import GridBlock from 'components/GridBlock';
 
+// Class
 class KeywordBlocks extends Component {
 
   constructor(props) {
@@ -30,9 +30,21 @@ class KeywordBlocks extends Component {
 
     return (
       <div className="keywordBlocks">
-        <div className="keywordBlocks_block" style={ styles[0] }><h1>{ words[0] }</h1></div>
-        <div className="keywordBlocks_block" style={ styles[1] }><h1>{ words[1] }</h1></div>
-        <div className="keywordBlocks_block" style={ styles[2] }><h1>{ words[2] }</h1></div>
+        <div className="keywordBlocks_block" style={ styles[0] }>
+          <GridBlock>
+            <h1>{ words[0] }</h1>
+          </GridBlock>
+        </div>
+        <div className="keywordBlocks_block" style={ styles[1] }>
+          <GridBlock>
+            <h1>{ words[1] }</h1>
+          </GridBlock>
+        </div>
+        <div className="keywordBlocks_block" style={ styles[2] }>
+          <GridBlock>
+            <h1>{ words[2] }</h1>
+          </GridBlock>
+        </div>
       </div>
     );
 

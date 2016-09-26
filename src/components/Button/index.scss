@@ -3,13 +3,9 @@
 
 .button {
 
-  &-primary {
+  &-primary { @extend %button; }
 
-    @extend %button;
-
-  }
-
-  &-secondary {}
+  &-secondary { @extend %buttonSecondary; }
 
   &-inactive {}
 
@@ -26,7 +22,7 @@
     &:hover {
 
     }
-    
+
   }
 
 }

@@ -8,6 +8,11 @@
 	100% 	{ opacity: 0; }
 }
 
+@keyframes slideIn {
+	0% 		{ transform: translateX(-100vw); }
+	100% 	{ transform: translateX(0vw); }
+}
+
 @keyframes fadeOutAndRemove {
 	0% 		{ opacity: 1; height: 100vh; }
 	99%		{ height: 100vh; }
