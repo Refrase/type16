@@ -16,6 +16,8 @@ import GridBlock from 'components/GridBlock';
 import KeywordBlocks from 'components/KeywordBlocks';
 import Device from 'components/Device';
 import Footer from 'components/Footer';
+import TextBlock from 'components/TextBlock';
+import Watermark from 'components/Watermark';
 
 // Actions
 import { getProjects, resetProjects } from 'ducks/consume/projects';
@@ -59,6 +61,7 @@ class Container extends Component {
     const projectIdMatchesUrl = project.id === this.props.params.projectId;
     const projectRed = this.props.params.projectId === 'red';
     const projectRelibond = this.props.params.projectId === 'relibond';
+    const projectWhyy = this.props.params.projectId === 'whyy';
 
     const stylesRedHeadlineGraph = {};
     stylesRedHeadlineGraph.textAlign = 'center';
@@ -73,10 +76,10 @@ class Container extends Component {
       { projectRed ? (
         <div className="red">
           <GridBlock>
-            <div className="span-5 span-8-tablet span-10-mobile">
-              <h1 className="margin-bottom-2-1">{ project.headline }</h1>
-              <p>{ project.texts[0] }</p>
-            </div>
+            <TextBlock
+              className="span-5 span-8-tablet span-10-mobile"
+              headline={ project.headline }
+              text={ project.texts[0] } />
             { project.devices && project.screens ? (
             <div className="devices span-6 offset-1 span-8-tablet offset-4-tablet span-12-mobile offset-0-mobile margin-top-4-1">
               { project.devices.phone && project.screens.phone ? ( <Device device={ project.devices.phone } screen={ project.screens.phone } /> ) : null }
@@ -91,7 +94,7 @@ class Container extends Component {
           ) : null }
           <div>
             <div className="display-flex justifyContent-center">
-              <h2 style={ stylesRedHeadlineGraph } className="padding-3-1 position-absolute">Message condensed.</h2>
+              <h2 style={ stylesRedHeadlineGraph } className="padding-3-1 position-absolute">Message condensed</h2>
             </div>
             { project.images.blueprints.graph ? ( <img src={ project.images.blueprints.graph } /> ) : null }
           </div>
@@ -101,10 +104,10 @@ class Container extends Component {
       { projectRelibond ? (
         <div className="relibond">
           <GridBlock>
-            <div className="span-5 span-8-tablet span-10-mobile">
-              <h1 className="margin-bottom-2-1">{ project.headline }</h1>
-              <p>{ project.texts[0] }</p>
-            </div>
+            <TextBlock
+              className="span-5 span-8-tablet span-10-mobile"
+              headline={ project.headline }
+              text={ project.texts[0] } />
             { project.devices && project.screens ? (
             <div className="devices span-8 offset-4 span-10-tablet offset-2-tablet span-12-mobile offset-0-mobile">
               { project.devices.desktop && project.screens.desktop ? ( <Device device={ project.devices.desktop } screen={ project.screens.desktop } /> ) : null }
@@ -126,11 +129,41 @@ class Container extends Component {
               <p>{ project.texts[1] }</p>
             </div>
             <div className="span-8 offset-4 span-7-tablet offset-4-tablet span-11-mobile offset-1-mobile">
-              <img src={ project.images.illustrations[0] } width="100%" />
+              <img src={ project.images.illustrations.technical_drawing_and_lines } width="100%" />
             </div>
           </GridBlock>
-          <div style={ stylesRelibondLastBlockBackground } className="relibond_block-last_background flipHorizontal"></div>
+          { project.images.patterns.diagonal_lines ? (
+            <Watermark
+              className="flipHorizontal"
+              imageUrl={ project.images.patterns.diagonal_lines }
+              height="400px"
+              marginTop="-300px"
+              heightMobile="250px"
+              marginTopMobile="-200px"
+              heightTablet="150px"
+              marginTopTablet="-100px" />
+          ) : null }
           <img src={ project.images.cover } width="100%" className="flipHorizontal" />
+        </div>
+      ) : null }
+
+      { projectWhyy ? (
+        <div className="whyy">
+          <img src={ project.images.applications.native } width="100%" />
+          <GridBlock>
+            <TextBlock
+              className="span-5 span-8-tablet span-10-mobile"
+              headline={ project.headline }
+              text={ project.texts[0] } />
+          </GridBlock>
+          { project.images.illustrations.egypt ? (
+            <Watermark
+              imageUrl={ project.images.illustrations.egypt }
+              height="400px"
+              marginTop="-300px" />
+          ) : null }
+          <img src={ project.images.applications.rammevaeg } width="100%" />
+          <img src={ project.images.applications.egypt } width="100%" />
         </div>
       ) : null }
 

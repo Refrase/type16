@@ -12,17 +12,20 @@
     "id" : "red",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-cover.jpg?alt=media&token=1fa3b037-3be3-401f-9011-db0f0c0858be",
+      "applications" : null,
       "blueprints" : {
         "logo" : null,
         "graph" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-graph-blueprint.svg?alt=media&token=8f1286aa-9d31-489f-b149-d6bbec0fe369"
-      }
+      },
+      "illustrations": null,
+      "patterns": null
     },
     "screens" : {
       "phone" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-phone.gif?alt=media&token=8fcfa6cc-67ed-4010-afb0-23153929b0cf",
       "tablet" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/red-markedsorientering-desktop.gif?alt=media&token=5e5a741a-fe60-4171-9a88-e3e1a10b977b",
       "desktop": null
     },
-    "headline" : "All screens considered.",
+    "headline" : "All screens considered",
     "texts" : [
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden."
@@ -42,19 +45,24 @@
     "id" : "relibond",
     "images" : {
       "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/martin-og-christian-vaerksted.jpg?alt=media&token=3f2270a0-b588-47d3-86ef-5dae7e7255b0",
+      "applications" : null,
       "blueprints": {
         "logo": "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-logo-blueprint.svg?alt=media&token=18e8d09c-7845-49ea-a472-6159dba46af6",
         "graph": null
       },
-      "illustrations": [ "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-illustration-and-lines.png?alt=media&token=c5d9852f-3046-4ffa-908a-4a6b06c8ac83" ],
-      "patterns": [ "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-pattern-diagonal-lines.svg?alt=media&token=e8c6510f-122a-4b6f-aae5-a02f25196c20" ]
+      "illustrations": {
+        "technical_drawing_and_lines" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-illustration-and-lines.png?alt=media&token=c5d9852f-3046-4ffa-908a-4a6b06c8ac83"
+      },
+      "patterns": {
+        "diagonal_lines" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-pattern-diagonal-lines.svg?alt=media&token=e8c6510f-122a-4b6f-aae5-a02f25196c20"
+      }
     },
     "screens" : {
       "phone" : null,
       "tablet" : null,
       "desktop": "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/relibond-website-desktop.jpg?alt=media&token=e774d00c-538c-4e1b-ac1e-faf01c0db1b8"
     },
-    "headline" : "Showcasing power revolution.",
+    "headline" : "Showcasing power revolution",
     "texts" : [
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden."
@@ -64,7 +72,7 @@
   }, {
     "client" : "W.H.Y.Y",
     "colors": ["#E6E2B7"],
-    "colorBackground": "#E6E2B7",
+    "colorBackground": "#fff",
     "colorTextOverlay" : "black",
     "devices" : {
       "phone": null,
@@ -73,18 +81,27 @@
     },
     "id" : "whyy",
     "images" : {
-      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/udrulning-whyy-01.jpg?alt=media&token=7868806c-0535-4409-bff6-4c69d5e8572b",
+      "cover" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/whyy-udrulning-tipi.jpg?alt=media&token=92a49d3f-abfa-448e-b6b0-1937c530dc1e",
+      "applications": {
+        "rammevaeg" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/whyy-vaeg-rammer.jpg?alt=media&token=add8fcc3-e618-4821-85bc-695b3e2ded7f",
+        "native" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/whyy-udrulning-native.jpg?alt=media&token=5ab7cc2a-2fc4-4078-bcb6-a1e148387ac4",
+        "egypt" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/whyy-udrulning-egypt.jpg?alt=media&token=5c7a79e9-d405-4f91-b875-1ac0f98c59ba"
+      },
       "blueprints" : {
         "logo" : null,
         "graph" : null
-      }
+      },
+      "illustrations": {
+        "egypt" : "https://firebasestorage.googleapis.com/v0/b/type16-4b4eb.appspot.com/o/whyy-egypt-fritlagt.png?alt=media&token=42caf150-284b-4a99-a78b-ad2dd5184193"
+      },
+      "patterns": null
     },
     "screens" : {
       "phone" : null,
       "tablet" : null,
       "desktop": null
     },
-    "headline" : null,
+    "headline" : "Illustrations for Louisiana",
     "texts" : [
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden.",
       "Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden."
