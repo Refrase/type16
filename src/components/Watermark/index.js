@@ -11,7 +11,7 @@ class Watermark extends Component {
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this);
 
     this.mqMobile = window.matchMedia( '(max-width: 480px)' );
-    this.mqTablet = window.matchMedia( '(max-width: 768px)' );
+    this.mqTablet = window.matchMedia( '(min-width: 481px) and (max-width: 768px)' );
 
     this.state = {
       isMobile: null,
@@ -25,17 +25,10 @@ class Watermark extends Component {
     this.mqTablet.addListener(this.mediaQueryChanged);
   }
 
-  componentDidUpdate() {
-    console.log( this.state.isMobile );
-    console.log( this.state.isTablet );
-  }
-
   componentWillUnmount() {
     this.mqMobile.removeListener(this.mediaQueryChanged);
     this.mqTablet.removeListener(this.mediaQueryChanged);
   }
-
-  // TODO SÆTTER IKKE TIL 'NULL' NÅR PÅ VEJ OP IGEN!!
 
   mediaQueryChanged() {
     this.setState({
@@ -49,19 +42,15 @@ class Watermark extends Component {
     const {
       className,
       imageUrl,
-      height,
-      marginTop,
-      heightMobile,
-      marginTopMobile,
-      heightTablet,
-      marginTopTablet,
+      heights,
+      marginsTop,
     } = this.props;
 
     const styles = {
       backgroundImage: imageUrl ? `url( ${imageUrl} )` : null,
       width: '100%',
-      height,
-      marginTop,
+      height: heights.desktop,
+      marginTop: marginsTop.desktop,
       opacity: '0.05',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'left',
@@ -69,17 +58,15 @@ class Watermark extends Component {
       backgroundOrigin: 'border-box',
     };
 
-    if ( this.state.isMobile ) {
-      styles.height = heightMobile;
-      styles.marginTop = marginTopMobile;
+    if ( this.state.isTablet ) {
+      styles.height = heights.tablet;
+      styles.marginTop = marginsTop.tablet;
     }
 
-    if ( this.state.isTablet ) {
-      styles.height = heightTablet;
-      styles.marginTop = marginTopTablet;
+    if ( this.state.isMobile ) {
+      styles.height = heights.mobile;
+      styles.marginTop = marginsTop.mobile;
     }
-    // @include breakpoint( 'tablet' ) { height: 250px; margin-top: -200px;  }
-    // @include breakpoint( 'mobile' ) { height: 150px; margin-top: -100px;  }
 
     const classes = classnames( 'watermark', { [className]: className ? true : null });
 
@@ -93,12 +80,16 @@ class Watermark extends Component {
 Watermark.propTypes = {
   className: PropTypes.string,
   imageUrl: PropTypes.string,
-  height: PropTypes.string.isRequired,
-  marginTop: PropTypes.string.isRequired,
-  heightMobile: PropTypes.string.isRequired,
-  marginTopMobile: PropTypes.string.isRequired,
-  heightTablet: PropTypes.string.isRequired,
-  marginTopTablet: PropTypes.string.isRequired,
+  heights: PropTypes.shape({
+    desktop: React.PropTypes.number,
+    tablet: React.PropTypes.number,
+    mobile: React.PropTypes.number,
+  }),
+  marginsTop: PropTypes.shape({
+    desktop: React.PropTypes.number,
+    tablet: React.PropTypes.number,
+    mobile: React.PropTypes.number,
+  }),
 };
 
 // Export

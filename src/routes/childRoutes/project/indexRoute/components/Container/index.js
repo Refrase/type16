@@ -136,12 +136,8 @@ class Container extends Component {
             <Watermark
               className="flipHorizontal"
               imageUrl={ project.images.patterns.diagonal_lines }
-              height="400px"
-              marginTop="-300px"
-              heightMobile="250px"
-              marginTopMobile="-200px"
-              heightTablet="150px"
-              marginTopTablet="-100px" />
+              heights={ { desktop: 400, tablet: 250, mobile: 200 } }
+              marginsTop={ { desktop: -300, tablet: -200, mobile: -150 } } />
           ) : null }
           <img src={ project.images.cover } width="100%" className="flipHorizontal" />
         </div>
@@ -157,10 +153,11 @@ class Container extends Component {
               text={ project.texts[0] } />
           </GridBlock>
           { project.images.illustrations.egypt ? (
-            <Watermark
-              imageUrl={ project.images.illustrations.egypt }
-              height="400px"
-              marginTop="-300px" />
+          <Watermark
+            className="flipHorizontal position-absolute"
+            imageUrl={ project.images.illustrations.egypt }
+            heights={ { desktop: 1000, tablet: 600, mobile: 400 } }
+            marginsTop={ { desktop: -600, tablet: -350, mobile: -300 } } />
           ) : null }
           <img src={ project.images.applications.rammevaeg } width="100%" />
           <img src={ project.images.applications.egypt } width="100%" />
