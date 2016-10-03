@@ -55,7 +55,7 @@ class Project extends Component {
           { devices && screens ? ( <Device device={ devices.tablet } screen={ screens.tablet } /> ) : null }
           { url ? (
             <Link to={ url }>
-              <img src={ colorTextOverlay === 'white' ? ChevronRightCircleWhite : ChevronRightCircleBlack  } width="56" />
+              <img className="project_link" src={ colorTextOverlay === 'white' ? ChevronRightCircleWhite : ChevronRightCircleBlack } width="56" />
             </Link>
           ) : null }
         </div>

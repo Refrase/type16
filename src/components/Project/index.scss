@@ -52,4 +52,11 @@
   &_text {
     max-width: 400px;
   }
+
+  &_link {
+    position: absolute;
+    bottom: $scale-4-1;
+    left: 50%;
+    transform: translateX( -50% );
+  }
 }
