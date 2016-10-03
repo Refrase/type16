@@ -1,3 +1,17 @@
-.type16 {
+.body { position: relative; height: 100%; }
+
+.page {
+
+  &-type16 {
+    display: flex;
+    width: 8000px;
+    height: 100vh;
+
+    & .logo {
+      position: fixed;
+      z-index: 9997;
+    }
+
+  }
 
 }
