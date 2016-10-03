@@ -1,6 +1,6 @@
 const route = {
 
-  path: 'about',
+  path: 'type16',
   getIndexRoute(location, callback) {
 
     callback(null, require('./indexRoute').default);

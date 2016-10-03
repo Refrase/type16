@@ -2,7 +2,7 @@
 @import './../../styles/utils/breakpoints';
 
 $iconWidth: 24px;
-$iconAnimation: all 0.3s $animationBezier;
+$iconAnimation: all 0.6s $animationBezier;
 
 .icon {
   display: inline-block;
@@ -58,11 +58,13 @@ $iconAnimation: all 0.3s $animationBezier;
     &_bar {
       position: absolute;
       top: 10px;
+      transform-origin: center center;
       &:first-child     { transform: rotate( 45deg ); }
       &:last-child      { transform: rotate( -45deg ); }
     }
 
-    &:hover { transform: translateY(-2px); }
+    &:hover .icon_bar:first-child { transform: rotate( 135deg ); transition-delay: .05s; }
+    &:hover .icon_bar:last-child  { transform: rotate( 225deg ); transition-duration: 1s; }
     &:active { transform: translateY(0px); }
 
   }

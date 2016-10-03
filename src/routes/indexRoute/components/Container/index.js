@@ -54,15 +54,14 @@ class Container extends Component {
   componentDidUpdate() {
     let snapSectionsLoaded = null;
     if ( this.props.projects.length > 0 ) {
-      this.initChangeColorOnScroll();
-      this.fadeOverlay();
-
       if ( !snapSectionsLoaded ) {
         this.snapSections();
         snapSectionsLoaded = true;
       } else {
         $.fn.fullpage.reBuild();
       }
+      this.initChangeColorOnScroll();
+      this.fadeOverlay();
     }
   }
 

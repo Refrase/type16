@@ -14,7 +14,7 @@ const route = {
       getChildRoutes(location, callback) {
 
         callback(null, [
-          require('./childRoutes/about').default,
+          require('./childRoutes/type16').default,
           require('./childRoutes/project').default,
           require('./notFoundRoute').default,
         ]);

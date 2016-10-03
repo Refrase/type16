@@ -27,8 +27,8 @@ class Nav extends Component {
 
     return (
       <nav className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <Link to="/">Projekter</Link>
+        <Link to="/type16">TYPE16</Link>
       </nav>
     );
 

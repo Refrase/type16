@@ -28,7 +28,7 @@ class Footer extends Component {
             <img src={ logoBlack } style={ stylesLogo } />
           </div>
           <div className="span-3-mobile display-flex justifyContent-center">
-            <Button styling="secondary" linkTo="/">Andre projekter</Button>
+            <Button styling="secondary" linkTo="/">Projects</Button>
           </div>
           <div className="span-3-mobile display-flex justifyContent-flexEnd alignItems-center">
             <p className="fontSize-xsmall color-brandWhite">Copyright &copy; 2016</p>

@@ -1,4 +1,4 @@
-// This route: /about
+// This route: /type16
 
 const route = {
 

@@ -42,7 +42,6 @@ class Frame extends Component {
     const documentHeight = $( document ).height();
     const footerHeight = $( '.footer' ).height();
     const navProjectsDots = $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' );
-    navProjectsDots.addClass( 'transition' );
     const scrollTop = $( window ).scrollTop();
 
     for ( let i = 0; i < this.props.colorsMorph.length; i++ ) {

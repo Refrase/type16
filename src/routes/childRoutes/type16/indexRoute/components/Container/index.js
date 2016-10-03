@@ -1,4 +1,4 @@
-/* ----- About ----- */
+/* ----- TYPE16 ----- */
 
 // Styles
 
@@ -32,7 +32,7 @@ class Container extends Component {
       <div className="pageAbout">
 
         <Hero>
-          <h1 className="fontSize-display fontFamily-logo textTransform-uppercase">Philosophy</h1>
+          <h1 className="fontSize-display fontFamily-logo textTransform-uppercase">TYPE16</h1>
         </Hero>
 
         <GridBlock columns="3">

@@ -1,46 +1,32 @@
 // Styles
-
 import './index.scss';
 
 // Libraries
-
 import React, { Component, PropTypes } from 'react';
 import $ from 'jquery';
 
 // Components
-
 import Icon from 'components/Icon';
 
 // Utilities
-
 import { scrollToId } from 'utils/scrollToId';
 
 // Actions
-
 import { openMenu } from 'ducks/ui/menu';
 
 // Class
-
 class Header extends Component {
 
   constructor(props) {
-
     super(props);
 
     this.openMenu = this.openMenu.bind(this);
     this.handleClickIconChevron = this.handleClickIconChevron.bind(this);
-
   }
 
   openMenu(e) {
-
     e.preventDefault();
     openMenu(this.props.dispatch);
-
-    $( '.frame, #fp-nav' ).addClass( 'menuOpen' );
-    $( '#fp-nav' ).addClass( 'transition' );
-    $( '#fp-nav' ).css({ transform: 'translateX(-4px)' });
-
   }
 
   handleClickIconChevron(e) { // ATT! fullpage.js-plugin have to be disabled for this to work
@@ -81,7 +67,6 @@ class Header extends Component {
   }
 
   render() {
-
     return (
       <div className="header">
         <Icon
@@ -90,13 +75,10 @@ class Header extends Component {
           onClick={ this.openMenu } />
       </div>
     );
-
   }
-
 }
 
 // PropTypes
-
 Header.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
@@ -106,5 +88,4 @@ Header.defaultProps = {
 };
 
 // Export
-
 export default Header;
