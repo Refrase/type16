@@ -40,14 +40,14 @@ class Container extends Component {
     // For fadeOverlay or moveOverlay function
     this.nonMoveAreaSize = 70; // Percent of screen in which the transform is NOT triggered
     this.nonMoveArea = $( window ).height() * (this.nonMoveAreaSize / 100);
-    this.moveArea = $( window ).height() - this.nonMoveArea;
+    this.moveArea = $( window ).height() - this.nonMoveArea - 120; // 120 is the distance from the chevron-icon to the bottom
   }
 
   componentDidMount() {
     getProjects( this.props.dispatch );
     $( window ).on( 'resize', () => {
       this.nonMoveArea = $( window ).height() * (this.nonMoveAreaSize / 100);
-      this.moveArea = $( window ).height() - this.nonMoveArea;
+      this.moveArea = $( window ).height() - this.nonMoveArea - 120; // 120 is the distance from the chevron-icon to the bottom
     });
   }
 
