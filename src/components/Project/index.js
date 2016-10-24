@@ -11,8 +11,8 @@ import Button from 'components/Button';
 import Device from 'components/Device';
 
 // Assets
-import ChevronRightCircleWhite from './../../data/assets/icons/chevron-shadow-white.svg';
-import ChevronRightCircleBlack from './../../data/assets/icons/chevron-shadow-black.svg';
+import ChevronWhite from './../../data/assets/icons/chevron-shadow-white.svg';
+import ChevronBlack from './../../data/assets/icons/chevron-shadow-black.svg';
 
 // Class
 class Project extends Component {
@@ -55,7 +55,7 @@ class Project extends Component {
           { devices && screens ? ( <Device device={ devices.tablet } screen={ screens.tablet } /> ) : null }
           { url ? (
             <Link to={ url }>
-              <img className="project_link" src={ colorTextOverlay === 'white' ? ChevronRightCircleWhite : ChevronRightCircleBlack } width="32" />
+              <img className="project_link" src={ colorTextOverlay === 'white' ? ChevronWhite : ChevronBlack } width="32" />
             </Link>
           ) : null }
         </div>

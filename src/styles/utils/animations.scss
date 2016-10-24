@@ -8,6 +8,11 @@
 	100% 	{ opacity: 0; }
 }
 
+@keyframes spin {
+	0% 		{ transform: rotate(0); }
+	100% 	{ transform: rotate(360deg); }
+}
+
 @keyframes slideIn {
 	0% 		{ transform: translateX(-100vw); }
 	100% 	{ transform: translateX(0vw); }

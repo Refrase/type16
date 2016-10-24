@@ -12,6 +12,9 @@ import Icon from 'components/Icon';
 // Actions
 import { closeMenu } from 'ducks/ui/menu';
 
+// Assets
+import CrossWhite from './../../data/assets/icons/cross-shadow-white.svg';
+
 // Class
 class Menu extends Component {
 
@@ -21,6 +24,13 @@ class Menu extends Component {
     this.closeMenu = this.closeMenu.bind(this);
     this.goToPath = this.goToPath.bind(this);
     this.renderMenu = this.renderMenu.bind(this);
+  }
+
+  componentDidUpdate() {
+    if ( this.props.showingMenu ) {
+      document.body.style.overflow = 'hidden';
+      console.log('nount');
+    }
   }
 
   closeMenu(e) {
@@ -51,6 +61,7 @@ class Menu extends Component {
           </li>
         </ul>
         <Icon which="cross" className="menu_icon" onClick={ this.closeMenu } />
+        { /* <img className="menu_icon" src={ CrossWhite } width="24" /> */ }
       </div>
     );
   }
@@ -62,7 +73,7 @@ class Menu extends Component {
         <CSSTransitionGroup
           transitionName="menuAnimation"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+          transitionLeaveTimeout={100}>
           { showingMenu ? ( this.renderMenu() ) : null }
         </CSSTransitionGroup>
       </div>
