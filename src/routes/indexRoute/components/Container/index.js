@@ -36,6 +36,7 @@ class Container extends Component {
     this.moveOverlay = this.moveOverlay.bind(this); // Not used now. fadeOverlay() used.
     this.fadeOverlay = this.fadeOverlay.bind(this);
     this.initChangeColorOnScroll = this.initChangeColorOnScroll.bind(this);
+    this.setUIElementsColorToBlack = this.setUIElementsColorToBlack.bind(this);
 
     // For fadeOverlay or moveOverlay function
     this.nonMoveAreaSize = 70; // Percent of screen in which the transform is NOT triggered
@@ -71,6 +72,12 @@ class Container extends Component {
     $( window ).off( 'scroll' );
     $( window ).off( 'mousemove' );
     $( window ).off( 'resize' );
+    this.setUIElementsColorToBlack();
+  }
+
+  setUIElementsColorToBlack() {
+    $( '#fp-nav' ).children( 'ul' ).children( 'li' ).children( 'a' ).children( 'span' ).css({ 'background-color': 'black' });
+    $( '.header_icon-burger' ).children( '.icon_inner' ).children( 'span' ).css({ 'background-color': 'black' });
   }
 
   snapSections() {
