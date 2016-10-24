@@ -26,6 +26,7 @@
     font-family: $fontFamily-display;
     font-size: $fontSize-display;
     font-weight: 400;
+    letter-spacing: 2px;
 
     @include breakpoint( 'tabletBelow' ) { font-size: $fontSize-display-tablet; }
     @include breakpoint( 'mobile' )      { font-size: $fontSize-display-mobile; }
