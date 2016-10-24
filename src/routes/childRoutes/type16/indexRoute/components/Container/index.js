@@ -5,6 +5,8 @@ import './index.scss';
 
 // Lib
 import React, { Component } from 'react';
+import $ from 'jquery';
+import mousewheel from 'jquery-mousewheel'; // It IS used!
 
 // Components
 import Hero from 'components/Hero';
@@ -19,7 +21,17 @@ class Container extends Component {
   constructor(props) { super(props); }
 
   componentWillMount() { document.body.style.overflowY = 'hidden'; }
-  componentWillUnmount() { document.body.style.overflowY = 'auto'; }
+
+  componentDidMount() {
+    $( 'body' ).on( 'mousewheel', (event, delta) => {
+      document.body.scrollLeft -= delta * 5;
+      event.preventDefault();
+    });
+  }
+
+  componentWillUnmount() { $( 'body' ).off( 'mousewheel' ); }
+
+  // TODO Lad logoet blive mindre og glide ud i et hjørne i takt med at der bliver scrollet
 
   render() {
     return (
