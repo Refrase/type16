@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 import { fullpage } from 'fullpage.js'; // it actually IS used
 
+// TODO Check det her snapscroll ud til landingpage i stedet: http://wtm.github.io/jquery.snapscroll/
+
 // Components
 import Hero from 'components/Hero';
 import AnimatedHeroIllustration from 'components/AnimatedHeroIllustration';
