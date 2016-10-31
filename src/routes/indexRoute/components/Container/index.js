@@ -12,6 +12,7 @@ import { fullpage } from 'fullpage.js'; // it actually IS used
 
 // Components
 import Hero from 'components/Hero';
+import AnimatedHeroIllustration from 'components/AnimatedHeroIllustration';
 import Logo from 'components/Logo';
 import Frame from 'components/Frame';
 import Project from 'components/Project';
@@ -157,6 +158,7 @@ class Container extends Component {
         <div id="fullpage">
           <Hero>
             { projects ? <Logo animateOnScroll /> : <h1 className="margin-bottom-4-1 fadeIn">Nice sweater!</h1> }
+            <AnimatedHeroIllustration />
           </Hero>
           { projects ? ( projects.map( (project, index) => this.renderProject(project, index) ) ) : null }
         </div>
